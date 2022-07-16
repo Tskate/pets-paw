@@ -1,15 +1,16 @@
 import React from "react";
 import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
-import './App.css';
+import styles from './App.module.css';
 import Main from "./pages/MainPage/Main";
 import Voting from "./pages/VotingPage/Voting";
 import Breeds from "./pages/BreedsPage/Breeds";
 import Gallery from "./pages/GalleryPage/Gallery";
+import WelcomePagePart from "./components/WelcomePagePart/WelcomePagePart";
 
 function App() {
   return (
-      <div className="App">
-          <h1>Hi</h1>
+      <div className={styles.App}>
+          <WelcomePagePart />
           <BrowserRouter>
             <Routes>
               <Route exact path="/" element={<Main />} />

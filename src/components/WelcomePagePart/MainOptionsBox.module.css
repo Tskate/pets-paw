@@ -1,0 +1,10 @@
+.mainOptBox {
+    /*display: grid;*/
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /*grid-gap: 10px 16px;*/
+    display: flex;
+    width: 57vh;
+    flex-direction: row;
+    gap: 1.5vh 2vh;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,21 @@
+.main {
+    margin-left: 3.9375rem;
+    margin-top: 2.3125rem;
+}
+
+.main p {
+    color: #8C8C8C;
+}
+.main h1 {
+    font-size: 44px;
+    margin-top: 5.3rem;
+}
+
+.main p, h5 {
+    font-size: 20px;
+}
+
+.main h5 {
+    margin-top: 3.75rem;
+    margin-bottom: 1.2rem;
+}

@@ -1,0 +1,20 @@
+.optionButton {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #FF868E;
+    width: 17vh;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionButton:hover {
+    background-color: #FBE0DC;
+}
+
+.optionButton:active {
+    background-color: #FF868E;
+    color: #FFFFFF;
+;
+}

@@ -1,0 +1,10 @@
+.title {
+    color: #1D1D1D;
+    font-weight: bold;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+}
