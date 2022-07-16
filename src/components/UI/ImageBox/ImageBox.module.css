@@ -1,0 +1,16 @@
+.imgBox {
+    width: 17vh;
+    height: 22vh;
+    border-radius: 20px;
+    border: 4px solid #FFFFFF99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imgBox > img {
+    width: auto;
+    height: 100%;
+    padding-top: 10px;
+}
