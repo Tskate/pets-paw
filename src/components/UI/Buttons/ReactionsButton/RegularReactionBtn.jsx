@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './RegularButtons.module.css'
 
-function RegularLikeBtn({icon}) {
+function RegularReactionBtn({icon}) {
     return(
         <div className={styles.btn}>
             <img src={icon} alt="icon"/>
@@ -9,4 +9,4 @@ function RegularLikeBtn({icon}) {
     )
 }
 
-export default RegularLikeBtn;
+export default RegularReactionBtn;

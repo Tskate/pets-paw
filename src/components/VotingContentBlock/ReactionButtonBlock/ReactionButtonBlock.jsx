@@ -1,8 +1,8 @@
 import React from "react";
 import style from './ReactionButtonBlock.module.css'
-import like from '../../images/icons/default/likeW.svg'
-import fav from '../../images/icons/default/favW.svg'
-import dislike from '../../images/icons/default/dislikeW.svg'
+import like from '../../../images/icons/default/likeW.svg'
+import fav from '../../../images/icons/default/favW.svg'
+import dislike from '../../../images/icons/default/dislikeW.svg'
 
 function ReactionButtonBlock() {
     return(

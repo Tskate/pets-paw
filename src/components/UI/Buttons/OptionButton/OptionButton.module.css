@@ -7,6 +7,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 2px;
+    line-height: 16px;
+    padding: 10px 0;
+    font-size: 12px;
 }
 
 .optionButton:hover {
