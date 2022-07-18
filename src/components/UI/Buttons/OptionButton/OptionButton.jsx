@@ -1,10 +1,11 @@
 import React from "react";
 import styles from './OptionButton.module.css'
+import {Link} from "react-router-dom";
 
-function OptionButton({text}) {
+function OptionButton({text, path}) {
     return(
-        <div className={styles.optionButton}>
-            {text}
+        <div className={styles.optionButton} >
+            <Link to={path} className={styles.link}>{text}</Link>
         </div>
     )
 }

@@ -6,20 +6,19 @@ import Voting from "./pages/VotingPage/Voting";
 import Breeds from "./pages/BreedsPage/Breeds";
 import Gallery from "./pages/GalleryPage/Gallery";
 import WelcomePagePart from "./components/WelcomePagePart/WelcomePagePart";
+// import Main from "./pages/MainPage/Main";
 
 function App() {
   return (
       <div className={styles.App}>
           <WelcomePagePart />
-          <BrowserRouter>
             <Routes>
-              <Route exact path="/" element={<Main />} />
-              <Route exact path="/voting" element={<Voting />} />
-              <Route exact path="/breeds" element={<Breeds />} />
-              <Route exact path="/gallery" element={<Gallery />}/>
+              <Route path="/" element={<Main />} />
+              <Route path="/voting" element={<Voting />} />
+              <Route path="/breeds" element={<Breeds />} />
+              <Route path="/gallery" element={<Gallery />}/>
               <Route path="*" element={<Navigate replace to="/" />}/>
             </Routes>
-          </BrowserRouter>
       </div>
   );
 }
