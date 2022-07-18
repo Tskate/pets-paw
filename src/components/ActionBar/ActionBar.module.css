@@ -1,0 +1,8 @@
+.bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 7px;
+    height: fit-content;
+    margin-bottom: 10px;
+}
