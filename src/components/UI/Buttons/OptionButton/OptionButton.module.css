@@ -13,12 +13,19 @@
     font-size: 12px;
 }
 
+.link {
+    color: #FF868E;
+    text-decoration: none;
+}
+
 .optionButton:hover {
     background-color: #FBE0DC;
 }
 
 .optionButton:active {
     background-color: #FF868E;
+}
+
+.optionButton:active .link {
     color: #FFFFFF;
-;
 }

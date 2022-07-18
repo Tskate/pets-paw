@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 function OptionButton({text, path}) {
     return(
         <div className={styles.optionButton} >
-            <Link to={path}>{text}</Link>
+            <Link to={path} className={styles.link}>{text}</Link>
         </div>
     )
 }
