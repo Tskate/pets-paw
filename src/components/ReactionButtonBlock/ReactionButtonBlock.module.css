@@ -1,0 +1,29 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 248px;
+    border-radius: 20px;
+    border: 4px solid #FFFFFF;
+    overflow: hidden;
+    gap: 4px;
+    background-color: #FFFFFF;
+}
+
+.like {
+    /*background-color: #97EAB9;*/
+    flex-grow: 1;
+    background: center center no-repeat #97EAB9;
+    /*background: url();*/
+}
+
+.fav {
+    flex-grow: 1;
+    background: center center no-repeat #FF868E;
+}
+
+.dislike {
+    flex-grow: 1;
+    background: center center no-repeat #FFD280;
+}
