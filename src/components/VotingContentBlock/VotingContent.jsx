@@ -6,7 +6,8 @@ import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import ReactionButtonBlock from "./ReactionButtonBlock/ReactionButtonBlock";
 import LogRecord from "./LogRecord/LogRecord";
 
-function VotingContent() {
+function VotingContent({pet}) {
+
     return(
         <div className={style.content}>
             <div className={style.header}>
@@ -14,7 +15,7 @@ function VotingContent() {
                 <SectionTitle text="VOTING"/>
             </div>
             <div className={style.img}>
-                <img src="" alt="pet-photo"/>
+                <img src={pet[0].url} alt="pet-photo"/>
             </div>
             <ReactionButtonBlock />
             <div>
