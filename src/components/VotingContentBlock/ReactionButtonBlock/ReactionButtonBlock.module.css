@@ -1,4 +1,3 @@
-
 .container {
     display: flex;
     flex-direction: row;
@@ -12,18 +11,25 @@
 }
 
 .like {
-    /*background-color: #97EAB9;*/
     flex-grow: 1;
     background: center center no-repeat #97EAB9;
-    /*background: url();*/
+}
+.like:hover {
+    background-color: #97EAB94D;
 }
 
 .fav {
     flex-grow: 1;
     background: center center no-repeat #FF868E;
 }
+.fav:hover {
+    background-color: #FF868E4D;
+}
 
 .dislike {
     flex-grow: 1;
     background: center center no-repeat #FFD280;
+}
+.dislike:hover {
+    background-color: #FFD2804D;
 }

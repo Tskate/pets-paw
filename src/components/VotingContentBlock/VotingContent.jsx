@@ -16,8 +16,9 @@ function VotingContent({pet}) {
             </div>
             <div className={style.img}>
                 <img src={pet[0].url} alt="pet-photo"/>
+                <div className={style.btnContainer}><ReactionButtonBlock /></div>
             </div>
-            <ReactionButtonBlock />
+
             <div>
                 <LogRecord />
                 <LogRecord />
