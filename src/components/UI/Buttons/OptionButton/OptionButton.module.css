@@ -1,0 +1,31 @@
+.optionButton {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #FF868E;
+    width: 17vh;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    line-height: 16px;
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.link {
+    color: #FF868E;
+    text-decoration: none;
+}
+
+.optionButton:hover {
+    background-color: #FBE0DC;
+}
+
+.optionButton:active {
+    background-color: #FF868E;
+}
+
+.optionButton:active .link {
+    color: #FFFFFF;
+}

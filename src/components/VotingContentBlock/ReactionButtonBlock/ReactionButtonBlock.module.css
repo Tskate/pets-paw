@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 248px;
+    border-radius: 20px;
+    border: 4px solid #FFFFFF;
+    overflow: hidden;
+    gap: 4px;
+    background-color: #FFFFFF;
+}
+.container > div {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.like {
+    background: center center no-repeat #97EAB9;
+}
+.like:hover {
+    background-color: #97EAB94D;
+}
+
+.fav {
+    background: center center no-repeat #FF868E;
+}
+.fav:hover {
+    background-color: #FF868E4D;
+}
+
+.dislike {
+    background: center center no-repeat #FFD280;
+}
+.dislike:hover {
+    background-color: #FFD2804D;
+}

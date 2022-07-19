@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Work+Sans:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Jost, sans-serif;
+    color: #1D1D1D;
+}
+
+body {
+    background: #E5E5E5;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 46.2vw 53.8vw;
+    justify-content: space-between;
+}
