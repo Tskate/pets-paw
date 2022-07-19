@@ -9,9 +9,12 @@
     gap: 4px;
     background-color: #FFFFFF;
 }
+.container > div {
+    cursor: pointer;
+    flex-grow: 1;
+}
 
 .like {
-    flex-grow: 1;
     background: center center no-repeat #97EAB9;
 }
 .like:hover {
@@ -19,7 +22,6 @@
 }
 
 .fav {
-    flex-grow: 1;
     background: center center no-repeat #FF868E;
 }
 .fav:hover {
@@ -27,7 +29,6 @@
 }
 
 .dislike {
-    flex-grow: 1;
     background: center center no-repeat #FFD280;
 }
 .dislike:hover {
