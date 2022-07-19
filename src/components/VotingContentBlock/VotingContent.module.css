@@ -16,4 +16,10 @@
     width: 100%;
     height: auto;
     border-radius: 20px;
+    overflow: hidden;
+}
+
+.img > img {
+    width: 100%;
+    height: auto;
 }
