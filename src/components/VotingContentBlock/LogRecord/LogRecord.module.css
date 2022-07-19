@@ -31,3 +31,7 @@
 .text > span {
     color: #1D1D1D;
 }
+.icon {
+    display: flex;
+    align-items: center;
+}
