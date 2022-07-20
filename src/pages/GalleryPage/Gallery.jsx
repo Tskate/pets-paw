@@ -1,8 +1,14 @@
 import React from "react";
+import ActionBar from "../../components/ActionBar/ActionBar";
+import GalleryContent from "../../components/GalleryContentBlock/GalleryContent";
+import style from "./Gallery.module.css"
 
 function Gallery() {
     return(
-        <h1>gallery</h1>
+        <div className={style.body}>
+            <ActionBar />
+            <GalleryContent />
+        </div>
     );
 }
 

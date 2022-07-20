@@ -1,0 +1,22 @@
+.img {
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px;
+
+    background-color: #FFD280;
+}
+.fav {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.img:hover {
+    background-color: #FF868E99;
+}
+.img:hover .fav {
+    display: flex;
+}
