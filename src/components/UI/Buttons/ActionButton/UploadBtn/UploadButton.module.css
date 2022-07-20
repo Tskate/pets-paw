@@ -1,0 +1,18 @@
+.button {
+    background-color: #FBE0DC;
+    border-radius: 10px;
+    height: 40px;
+    width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.text {
+    color: #FF868E;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2px;
+}
+

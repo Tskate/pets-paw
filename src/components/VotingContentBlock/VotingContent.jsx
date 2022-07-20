@@ -59,6 +59,7 @@ function VotingContent({pet, toNext}) {
             <div className={style.header}>
                 <ActionButton icon={icon} />
                 <SectionTitle text="VOTING"/>
+                
             </div>
             <div className={style.img}>
                 <img src={pet[0].url} alt="pet-photo"/>

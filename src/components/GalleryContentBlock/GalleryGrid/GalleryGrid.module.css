@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 20px;
+
+    grid-template-areas:
+    "ar1 ar2 ar3"
+    "ar1 ar4 ar4"
+    "ar5 ar4 ar4";
+}
+
