@@ -7,7 +7,7 @@ import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import UploadButton from "../UI/Buttons/ActionButton/UploadBtn/UploadButton";
 import GalleryGrid from "./GalleryGrid/GalleryGrid";
 
-function GalleryContent() {
+function GalleryContent({pets, setNewFilters, breeds}) {
     return(
         <div className={style.content}>
             <div className={style.header}>
@@ -17,8 +17,8 @@ function GalleryContent() {
                 </div>
                 <UploadButton />
             </div>
-            <FilterPanel />
-            <GalleryGrid />
+            <FilterPanel setNewFilters={setNewFilters} breedsList={breeds}/>
+            <GalleryGrid pets={pets}/>
 
         </div>
     );
