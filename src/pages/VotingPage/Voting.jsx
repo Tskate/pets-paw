@@ -29,11 +29,6 @@ function Voting() {
     }
     return(
         isLoadPet()
-        // <div className={style.body}>
-        //     <ActionBar />
-        // {/*//     <VotingContent pet={pet}/>*/}
-        // </div>
-
     );
 }
 
