@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import {Navigate, Route, Routes} from 'react-router-dom';
 import styles from './App.module.css';
 import Main from "./pages/MainPage/Main";
@@ -8,10 +8,9 @@ import Gallery from "./pages/GalleryPage/Gallery";
 import WelcomePagePart from "./components/WelcomePagePart/WelcomePagePart";
 
 function App() {
-    // const [breeds, setBreeds] = useEffect([])
     const [breeds, setBreeds] = useState([]);
+
     useEffect(() => {
-        {console.log('ef')}
         fetch("https://api.thecatapi.com/v1/breeds",
             {headers:{
                 'x-api-key': 'DEMO-API-KEY'}

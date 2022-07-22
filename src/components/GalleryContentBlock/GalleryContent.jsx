@@ -6,8 +6,10 @@ import icon from "../../images/icons/default/back.svg";
 import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import UploadButton from "../UI/Buttons/ActionButton/UploadBtn/UploadButton";
 import GalleryGrid from "./GalleryGrid/GalleryGrid";
+import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 
 function GalleryContent({pets, setNewFilters, breeds}) {
+
     return(
         <div className={style.content}>
             <div className={style.header}>
@@ -18,7 +20,10 @@ function GalleryContent({pets, setNewFilters, breeds}) {
                 <UploadButton />
             </div>
             <FilterPanel setNewFilters={setNewFilters} breedsList={breeds}/>
-            <GalleryGrid pets={pets}/>
+            <GalleryGrid
+                pets={pets}
+                addToFavourite={useAddToFavourite}
+                removeFromFavourites={useDelFromFavourite}/>
 
         </div>
     );

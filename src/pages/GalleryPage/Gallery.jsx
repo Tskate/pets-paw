@@ -7,6 +7,7 @@ function Gallery({breeds}) {
     const [filter, setFilter] = useState({order:'RANDOM', type:'jpg,png,gif', breed:'', limit:5});
     const [result, setResult] = useState();
 
+
     useEffect(() => {
         fetch(
             `https://api.thecatapi.com/v1/images/search?order=${filter.order}&mime_types=${filter.type}&breed_ids=${filter.breed}&limit=${filter.limit}`, {
