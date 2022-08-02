@@ -1,11 +1,20 @@
-.container {
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container1, .container2 {
     display: grid;
     grid-template: repeat(3, auto)/ repeat(3, auto);
     gap: 20px;
 
     grid-template-areas:
-    "ar1 ar2 ar3"
-    "ar1 ar4 ar4"
-    "ar5 ar4 ar4";
+    "ar0 ar1 ar2"
+    "ar0 ar3 ar3"
+    "ar4 ar3 ar3";
+}
+
+.container2 {
+    direction: rtl;
 }
 
