@@ -3,10 +3,21 @@ import style from './GalleryGrid.module.css'
 import ImageBlock from "./ImageBlock/ImageBlock";
 
 function GalleryGrid({pets, addToFavourite, removeFromFavourites}) {
-    let counter = 1
+
 
     const [actionFav, setActionFav] = useState(false);
     const [favourites, setFavourites] = useState()
+    let petsChunks = []
+
+    function chunking(pets) {
+        const arr = [...pets]
+        const res = [];
+        while (arr.length > 0) {
+            const chunk = arr.splice(0, 5);
+            res.push(chunk);
+        }
+        return res;
+    }
 
     useEffect(() => {
         fetch(`https://api.thecatapi.com/v1/favourites`,
@@ -23,20 +34,24 @@ function GalleryGrid({pets, addToFavourite, removeFromFavourites}) {
 
     function isLoad() {
         if(pets) {
+            petsChunks = chunking(pets)
             return (
-                <div className={style.container}>
-                    {pets.map(pet =>
-                        <ImageBlock
-                            key={pet.id}
-                            pet={pet}
-                            gridArea={{gridArea: 'ar' + counter++}}
-                            addToFavourite={addToFavourite}
-                            removeFromFavourites={removeFromFavourites}
-                            favs={favourites}
-                            action={() => setActionFav(!actionFav)}
-                        />)
-                    }
-                </div>
+                   <div className={style.mainContainer}>
+                       {petsChunks.map((chunk, index) =>
+                           <div key={index} className={index % 2 ? style.container2 : style.container1}>
+                               {chunk.map((pet, index) =>
+                                       <ImageBlock
+                                        key={pet.id}
+                                        pet={pet}
+                                        gridArea={{gridArea: 'ar' + index}}
+                                        addToFavourite={addToFavourite}
+                                        removeFromFavourites={removeFromFavourites}
+                                        favs={favourites}
+                                        action={() => setActionFav(!actionFav)}
+                               />)}
+                           </div>
+                       )}
+                   </div>
             );
         }
     }
