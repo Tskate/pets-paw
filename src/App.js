@@ -25,7 +25,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/voting" element={<Voting />} />
-              <Route path="/breeds" element={<Breeds />} />
+              <Route path="/breeds" element={<Breeds breeds={breeds}/>} />
               <Route path="/gallery" element={<Gallery breeds={breeds}/>}/>
               <Route path="*" element={<Navigate replace to="/" />}/>
           </Routes>
