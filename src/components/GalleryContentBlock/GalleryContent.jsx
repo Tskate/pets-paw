@@ -23,7 +23,8 @@ function GalleryContent({pets, setNewFilters, breeds}) {
             <GalleryGrid
                 pets={pets}
                 addToFavourite={useAddToFavourite}
-                removeFromFavourites={useDelFromFavourite}/>
+                removeFromFavourites={useDelFromFavourite}
+            />
 
         </div>
     );

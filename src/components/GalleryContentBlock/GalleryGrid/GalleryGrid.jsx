@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import style from './GalleryGrid.module.css'
 import ImageBlock from "./ImageBlock/ImageBlock";
 
-function GalleryGrid({pets, addToFavourite, removeFromFavourites}) {
+function GalleryGrid({pets, addToFavourite, removeFromFavourites, isGallery=true}) {
 
 
     const [actionFav, setActionFav] = useState(false);
@@ -48,6 +48,7 @@ function GalleryGrid({pets, addToFavourite, removeFromFavourites}) {
                                         removeFromFavourites={removeFromFavourites}
                                         favs={favourites}
                                         action={() => setActionFav(!actionFav)}
+                                        isGallery={isGallery}
                                />)}
                            </div>
                        )}

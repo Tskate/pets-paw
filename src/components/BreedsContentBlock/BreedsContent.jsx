@@ -4,8 +4,10 @@ import icon from "../../images/icons/default/back.svg";
 import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import BreedsFilter from "./BreedsFilterPanel/BreedsFilter";
 import style from './BreedsContent.module.css'
+import GalleryGrid from "../GalleryContentBlock/GalleryGrid/GalleryGrid";
+import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 
-function BreedsContent({breeds}) {
+function BreedsContent({breeds, pets, setNewFilters, onClickAsc, onClickDesc}) {
     return(
         <div className={style.content}>
             <div className={style.header}>
@@ -13,8 +15,20 @@ function BreedsContent({breeds}) {
                     <ActionButton icon={icon} />
                     <SectionTitle text="BREEDS"/>
                 </div>
-                <BreedsFilter breedsList={breeds}/>
+                <BreedsFilter
+                    breedsList={breeds}
+                    setNewFilter={setNewFilters}
+                    onClickAsc={onClickAsc}
+                    onClickDesc={onClickDesc}
+                />
             </div>
+            <GalleryGrid
+                pets={pets}
+                addToFavourite={useAddToFavourite}
+                removeFromFavourites={useDelFromFavourite}
+                isGallery='false'
+            />
+
         </div>
     );
 }

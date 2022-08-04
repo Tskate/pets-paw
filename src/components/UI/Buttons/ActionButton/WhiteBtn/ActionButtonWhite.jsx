@@ -3,7 +3,7 @@ import style from './ActionButtonWhite.module.css'
 
 function ActionButtonWhite({icon, className, onClick}) {
     return(
-        <div className={style.searchBtn + " " + className} onClick={() => onClick()}>
+        <div className={`${className} ${style.searchBtn}`} onClick={() => onClick()}>
             <img src={icon} alt="search-icon"/>
         </div>
     );

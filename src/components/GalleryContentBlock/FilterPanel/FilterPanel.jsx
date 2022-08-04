@@ -20,10 +20,6 @@ function FilterPanel({setNewFilters, breedsList}) {
         setNewFilters({order: order, type:type, breed:breed, limit:limit})
     }
 
-    function setSelectOr(val) {
-        setOrder(val)
-    }
-
     return(
         <div className={style.container}>
             <Selector

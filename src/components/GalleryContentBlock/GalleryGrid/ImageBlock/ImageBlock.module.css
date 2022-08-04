@@ -8,9 +8,9 @@
     background-color: #FF868E;
     overflow: hidden;
 }
-.fav {
+.fav, .breed {
     position: absolute;
-    display: none;
+    display: none !important;
     z-index: 2;
 }
 .imgCont {
@@ -31,7 +31,7 @@
 /*    background-color: #FF868E99;*/
 /*}*/
 .img:hover .fav {
-    display: flex;
+    display: flex !important;
 }
 .background {
     width: 100%;
@@ -43,4 +43,16 @@
 
 .background:hover {
     background-color: #FF868E99;
+}
+
+.img:hover .breed {
+    display: flex !important;
+
+}
+
+.breed {
+    width: calc(100% - 20px) !important;
+    height: 40px !important;
+    align-self: end;
+    margin: 0 10px 10px 10px;
 }
