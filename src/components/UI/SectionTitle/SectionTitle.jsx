@@ -1,9 +1,9 @@
 import React from "react";
 import style from './SectionTitle.module.css'
 
-function SectionTitle({text}) {
+function SectionTitle({text, isDefault=false}) {
     return(
-        <div className={style.title}>
+        <div className={isDefault ? `${style.title} ${style.defaultTitle}` : style.title}>
             {text}
         </div>
     )

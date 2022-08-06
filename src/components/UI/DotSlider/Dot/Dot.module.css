@@ -1,0 +1,11 @@
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FBE0DC;
+    cursor: pointer;
+}
+
+.selectedDot {
+    background-color: #FF868E;
+}

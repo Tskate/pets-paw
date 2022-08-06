@@ -1,0 +1,29 @@
+.imgsWrapper {
+    width: 100%;
+    height: 360px;
+    /*background-color: #FF868E;*/
+    border-radius: 20px;
+    overflow: hidden;
+}
+.slideList {
+    display: flex;
+    transition: .5s ease-in-out;
+    transition-delay: 0.3s;
+}
+.slideList img {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+.content {
+    position: relative;
+    margin-bottom: 30px;
+}
+.sliderContainer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: -15px;
+    z-index: 1;
+}

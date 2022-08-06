@@ -8,6 +8,7 @@ import GalleryGrid from "../GalleryContentBlock/GalleryGrid/GalleryGrid";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 
 function BreedsContent({breeds, pets, setNewFilters, onClickAsc, onClickDesc}) {
+
     return(
         <div className={style.content}>
             <div className={style.header}>

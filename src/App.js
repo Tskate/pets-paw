@@ -6,6 +6,7 @@ import Voting from "./pages/VotingPage/Voting";
 import Breeds from "./pages/BreedsPage/Breeds";
 import Gallery from "./pages/GalleryPage/Gallery";
 import WelcomePagePart from "./components/WelcomePagePart/WelcomePagePart";
+import BreedDescription from "./pages/BreedsPage/BreedDescription/BreedDescription";
 
 function App() {
     const [breeds, setBreeds] = useState([]);
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/voting" element={<Voting />} />
               <Route path="/breeds" element={<Breeds breeds={breeds}/>} />
+              <Route path="/breeds/:breed_id" element={<BreedDescription />} />
               <Route path="/gallery" element={<Gallery breeds={breeds}/>}/>
               <Route path="*" element={<Navigate replace to="/" />}/>
           </Routes>

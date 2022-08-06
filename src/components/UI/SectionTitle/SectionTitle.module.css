@@ -11,3 +11,8 @@
     justify-content: center;
     align-items: center;
 }
+
+.defaultTitle {
+    background-color: #FBE0DC;
+    color: #FF868E;
+}

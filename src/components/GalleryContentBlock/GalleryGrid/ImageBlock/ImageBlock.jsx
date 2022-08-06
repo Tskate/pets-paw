@@ -36,7 +36,8 @@ function ImageBlock({pet, gridArea, addToFavourite, removeFromFavourites, favs, 
                 : <OptionButton
                     className={style.breed}
                     text={pet.breeds[0] ? pet.breeds[0].name : 'Unknown'}
-                    path={''}/>
+                    path={pet.breeds.length ? pet.breeds[0].id : ''}
+                />
                   }
         </div>
     );

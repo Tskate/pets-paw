@@ -1,6 +1,9 @@
 .main {
     margin-left: 3.9375rem;
     margin-top: 2.3125rem;
+    position: sticky;
+    top:0;
+    left: 0;
 }
 
 .main p {

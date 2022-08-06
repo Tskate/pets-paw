@@ -4,7 +4,7 @@ import style from './ActionButton.module.css'
 
 function ActionButton({icon}) {
     return(
-        <div className={style.searchBtn}>
+        <div className={style.searchBtn} >
             <img src={icon} alt="search-icon"/>
         </div>
     );
