@@ -16,8 +16,11 @@
     /*font-size: 16px;*/
     /*line-height: 24px;*/
     color: #1D1D1D;
+    cursor: pointer;
 }
-
+.select:hover {
+    border: 2px solid #FBE0DC;
+}
 .select > option {
     color: #8C8C8C;
 }

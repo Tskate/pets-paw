@@ -1,0 +1,10 @@
+.slider {
+    width: 90px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
