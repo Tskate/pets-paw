@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import FilterPanel from "./FilterPanel/FilterPanel";
 import style from './GalleryContent.module.css'
 import ActionButton from "../UI/Buttons/ActionButton/ActionButton";
@@ -7,8 +7,16 @@ import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import UploadButton from "../UI/Buttons/ActionButton/UploadBtn/UploadButton";
 import GalleryGrid from "./GalleryGrid/GalleryGrid";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import UploadModalWindow from "./UploadModalWindow/UploadModalWindow";
+import {UploadModalWindowContext} from "../../App";
 
 function GalleryContent({pets, setNewFilters, breeds}) {
+
+    const {setIsActive} = useContext(UploadModalWindowContext);
+
+    function showModalWindow() {
+        setIsActive(true)
+    }
 
     return(
         <div className={style.content}>
@@ -17,7 +25,7 @@ function GalleryContent({pets, setNewFilters, breeds}) {
                     <ActionButton icon={icon} />
                     <SectionTitle text="GALLERY"/>
                 </div>
-                <UploadButton />
+                <UploadButton onclick={showModalWindow}/>
             </div>
             <FilterPanel setNewFilters={setNewFilters} breedsList={breeds}/>
             <GalleryGrid
@@ -25,7 +33,6 @@ function GalleryContent({pets, setNewFilters, breeds}) {
                 addToFavourite={useAddToFavourite}
                 removeFromFavourites={useDelFromFavourite}
             />
-
         </div>
     );
 }

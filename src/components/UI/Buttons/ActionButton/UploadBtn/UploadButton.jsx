@@ -2,9 +2,9 @@ import React from "react";
 import style from './UploadButton.module.css'
 import icon from '../../../../../images/icons/default/upload.svg'
 
-function UploadButton() {
+function UploadButton({onclick}) {
     return (
-        <div className={style.button}>
+        <div className={style.button} onClick={() => onclick()}>
             <span>
                 <img src={icon} alt="upload-icon"/>
             </span>
