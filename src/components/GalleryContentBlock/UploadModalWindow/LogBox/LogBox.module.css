@@ -1,0 +1,17 @@
+.msg {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.logBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
