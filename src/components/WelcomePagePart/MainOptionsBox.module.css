@@ -1,10 +1,12 @@
 .mainOptBox {
-    /*display: grid;*/
-    /*grid-template-columns: repeat(3, 1fr);*/
-    /*grid-gap: 10px 16px;*/
     display: flex;
-    width: 57vh;
     flex-direction: row;
-    gap: 1.5vh 2vh;
+    gap: 10px;
     flex-wrap: wrap;
+}
+
+.mainOptBox > div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }

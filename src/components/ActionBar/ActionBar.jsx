@@ -9,7 +9,7 @@ import style from './ActionBar.module.css'
 function ActionBar() {
     return(
         <div className={style.bar}>
-            <SearchBar />
+            <SearchBar/>
             <RegularReactionBtn icon={like} />
             <RegularReactionBtn icon={fav} />
             <RegularReactionBtn icon={dislike} />

@@ -10,12 +10,18 @@ function MainOptionsBox() {
 
     return (
         <div className={styles.mainOptBox}>
-            <ImageBox img={Vote} background="#B4B7FF"/>
-            <ImageBox img={Breeds} background="#97EAB9"/>
-            <ImageBox img={Search} background="#FFD280"/>
-            <OptionButton text="VOTING" path="voting"/>
-            <OptionButton text="BREEDS" path="breeds"/>
-            <OptionButton text="GALLERY" path="gallery"/>
+            <div>
+                <ImageBox img={Vote} background="#B4B7FF"/>
+                <OptionButton text="VOTING" path="voting"/>
+            </div>
+            <div >
+                <ImageBox img={Breeds} background="#97EAB9"/>
+                <OptionButton text="BREEDS" path="breeds"/>
+            </div>
+            <div >
+                <ImageBox img={Search} background="#FFD280"/>
+                <OptionButton text="GALLERY" path="gallery"/>
+            </div>
         </div>
     );
 

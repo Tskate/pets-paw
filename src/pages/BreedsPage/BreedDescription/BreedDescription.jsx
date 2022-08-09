@@ -3,7 +3,6 @@ import ActionBar from "../../../components/ActionBar/ActionBar";
 import DescriptionContent from "../../../components/BreedsContentBlock/BreedDescriptionContentBlock/DescriptionContent";
 import style from '../../GalleryPage/Gallery.module.css'
 import {useParams} from "react-router-dom";
-import Slides from "../../../components/BreedsContentBlock/BreedDescriptionContentBlock/Slides/Slides";
 
 function BreedDescription() {
     const breedID = useParams().breed_id;

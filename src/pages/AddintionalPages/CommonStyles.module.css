@@ -1,3 +1,12 @@
+.body {
+    padding-top: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 98vh;
+    margin-bottom: 2em;
+}
+
 .content {
     background-color: #FFFFFF;
     border-radius: 20px;
@@ -8,8 +17,9 @@
     gap: 20px;
 }
 
-.header, .leftPart {
+.header {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
 }

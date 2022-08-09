@@ -1,0 +1,13 @@
+.body {
+    background: #F8F8F7;
+    border-radius: 10px;
+    padding-left: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.body > p {
+    color: #8C8C8C;
+}

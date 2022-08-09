@@ -2,8 +2,9 @@
     border-radius: 10px;
     background-color: #FFFFFF;
     color: #FF868E;
-    width: 17vh;
-    height: 4vh;
+    /*width: 17vh;*/
+    /*height: 4vh;*/
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
