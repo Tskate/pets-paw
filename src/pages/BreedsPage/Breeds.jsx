@@ -12,7 +12,7 @@ function Breeds({breeds}) {
 
     useEffect(() => {
         fetch(
-            `https://api.thecatapi.com/v1/images/search?&breed_ids=${filter.breed}&limit=${filter.limit}`, {
+            `https://api.thecatapi.com/v1/images/search?&breed_ids=${filter.breed}&limit=${filter.limit}&has_breeds=1`, {
                 headers : {
                     'x-api-key': 'DEMO-API-KEY'
                 }
@@ -22,39 +22,20 @@ function Breeds({breeds}) {
     }, [filter])
 
 
-    function sorting() {
-        let obj = result
-        let res1 = {}
+    function sorting(isASC) {
+        let sortedRes = []
 
-        // console.log('original ', obj)
-        Object.keys(obj).sort((a, b) => {
+        if(isASC) {
+            Object.keys(result).sort((a,b) => result[a].breeds[0].name > result[b].breeds[0].name ? 1 : -1)
+                .forEach(o => sortedRes.push(result[o]));
+        } else {
+            Object.keys(result).sort((a,b) => result[a].breeds[0].name < result[b].breeds[0].name ? 1 : -1)
+                .forEach(o => sortedRes.push(result[o]));
+        }
+        sortedRes = JSON.stringify(sortedRes)
 
-            if(obj[b].breeds.length === 0 || obj[a].breeds.length === 0 ) {
-                if(obj[a].breeds.length === 0  && obj[b].breeds.length !== 0 )
-                // {console.log('-1', obj[b].breeds[0].name)
-                //     console.log(obj)
-                    return -1
-                else if (obj[b].breeds.length === 0  && obj[a].breeds.length !== 0 )
-                // {console.log('1', obj[a].breeds[0].name)
-                //     console.log(obj)
-                    return 1
-                return 0
-            }
-            else {
-                if (obj[a].breeds[0].name < obj[b].breeds[0].name ){
-                    return -1;
-                }
-                if (obj[a].breeds[0].name > obj[b].breeds[0].name){
-                    return 1;
-                }
-                return 0;
-            }
+        setResult(JSON.parse(sortedRes))
 
-        }).forEach(function (v) { res1[v] = result[v]; });
-
-
-
-        // console.log('sorted ', res1)
 
     }
 
@@ -65,8 +46,8 @@ function Breeds({breeds}) {
                 pets={result}
                 setNewFilters={(val) => setFilter(val)}
                 breeds={breeds}
-                onClickAsc={() => sorting()}
-                onClickDesc={() => sorting()}
+                onClickAsc={() => sorting(1)}
+                onClickDesc={() => sorting(0)}
             />
         </div>
     );
