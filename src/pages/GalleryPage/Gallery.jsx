@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ActionBar from "../../components/ActionBar/ActionBar";
 import GalleryContent from "../../components/GalleryContentBlock/GalleryContent";
-import style from "./Gallery.module.css"
+import style from "../CommonBodyStyles.module.css"
 
 function Gallery({breeds}) {
     const [filter, setFilter] = useState({order:'RANDOM', type:'jpg,png,gif', breed:'', limit:5});

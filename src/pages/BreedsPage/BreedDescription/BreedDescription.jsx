@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import ActionBar from "../../../components/ActionBar/ActionBar";
 import DescriptionContent from "../../../components/BreedsContentBlock/BreedDescriptionContentBlock/DescriptionContent";
-import style from '../../GalleryPage/Gallery.module.css'
 import {useParams} from "react-router-dom";
+import style from '../../CommonBodyStyles.module.css'
 
 function BreedDescription() {
     const breedID = useParams().breed_id;

@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {useNavigate} from 'react-router-dom'
 import style from "./VotingContent.module.css"
-import ActionButton from "../UI/Buttons/ActionButton/ActionButton";
-import icon from "../../images/icons/default/back.svg";
-import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import ReactionButtonBlock from "./ReactionButtonBlock/ReactionButtonBlock";
 import likeIcon from '../../images/forLog/like-color-20.svg'
 import dislikeIcon from '../../images/forLog/dislike-color-20.svg'
@@ -12,9 +8,11 @@ import removeIcon from '../../images/forLog/error-20.svg'
 import LogList from "./LogRecord/LogList";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
+import Loader from "../UI/Loader/Loader";
 
 function VotingContent({pet, toNext}) {
     const [logs, setLogs] = useState([])
+    const [isFetching, setIsFetching] = useState(false)
 
     const [actionFav, setActionFav] = useState(false);
     const [favourites, setFavourites] = useState()
@@ -27,7 +25,12 @@ function VotingContent({pet, toNext}) {
                     'Content-Type' : 'application/json',
                     'x-api-key' : '33d0442b-b0dc-4f44-a23d-6eb26431367e'
                 }
-            }).then(res => res.json()).then(data => setFavourites(data))
+            })
+            .then(res => res.json())
+            .then(data => {
+                setFavourites(data)
+                setIsFetching(true)
+            })
     }, [actionFav]);
 
     function setLikeOrDislike(val, sectionName, isAdded=true) {
@@ -71,23 +74,33 @@ function VotingContent({pet, toNext}) {
         setLogs([newLog, ...logs])
     }
 
+    function renderContent() {
+        if(isFetching) {
+            return(
+                <div className={style.img}>
+                    <img src={pet[0].url} alt="pet-photo"/>
+                    <div className={style.btnContainer}>
+                        <ReactionButtonBlock
+                            pet={pet[0]}
+                            setReaction={setLikeOrDislike}
+                            addToFavourite={useAddToFavourite}
+                            removeFromFavourites={useDelFromFavourite}
+                            favs={favourites}
+                            action={() => setActionFav(!actionFav)}
+                            addToLog={addToLog}
+                        />
+                    </div>
+                </div>
+            );
+        } else {
+            return (<Loader />)
+        }
+    }
+
     return(
         <div className={style.content}>
             <CommonPageHeader title="VOTING"/>
-            <div className={style.img}>
-                <img src={pet[0].url} alt="pet-photo"/>
-                <div className={style.btnContainer}>
-                    <ReactionButtonBlock
-                        pet={pet[0]}
-                        setReaction={setLikeOrDislike}
-                        addToFavourite={useAddToFavourite}
-                        removeFromFavourites={useDelFromFavourite}
-                        favs={favourites}
-                        action={() => setActionFav(!actionFav)}
-                        addToLog={addToLog}
-                    />
-                </div>
-            </div>
+            {renderContent()}
             <LogList logs={logs} />
         </div>
     );

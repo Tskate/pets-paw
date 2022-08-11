@@ -1,0 +1,21 @@
+.body {
+    padding-top: 30px;
+    padding-right: 30px;
+    width: 53vw;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 2em);
+    margin-bottom: 2em;
+    overflow-y: auto;
+}
+
+
+.body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

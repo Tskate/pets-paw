@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from "react";
 import commonStyle from "./CommonStyles.module.css";
+import commonStyleBody from "../CommonBodyStyles.module.css"
 import ActionBar from "../../components/ActionBar/ActionBar";
-import ActionButton from "../../components/UI/Buttons/ActionButton/ActionButton";
-import icon from "../../images/icons/default/back.svg";
-import SectionTitle from "../../components/UI/SectionTitle/SectionTitle";
 import GalleryGrid from "../../components/GalleryContentBlock/GalleryGrid/GalleryGrid";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import NotFoundBlock from "./NotFoundBlock/NotFoundBlock";
-import styles from "../../components/UI/Buttons/ReactionsButton/RegularButtons.module.css";
 import CommonPageHeader from "../../components/CommonPageHeader/CommonPageHeader";
+import Loader from "../../components/UI/Loader/Loader";
 
 function LikesOrDislikesPage({value}) {
     const [result, setResult] = useState(null);
+    const [isFetching, setIsFetching] = useState(false)
 
     useEffect(() => {
         fetch(`https://api.thecatapi.com/v1/votes`, {
@@ -20,23 +19,31 @@ function LikesOrDislikesPage({value}) {
                 }
             })
                 .then(res => res.json())
-                .then(data => setResult(data.filter(el => el.value === value).map(el => el.image)))
+                .then(data => {
+                    setResult(data.filter(el => el.value === value).map(el => el.image))
+                    setIsFetching(true)
+                })
     }, [value]);
-
+    
     function renderResult() {
-        if(result) {
-            return( <GalleryGrid
-                pets={result}
-                addToFavourite={useAddToFavourite}
-                removeFromFavourites={useDelFromFavourite}
-            />)
+        if(isFetching) {
+            if(result) {
+                return( <GalleryGrid
+                    pets={result}
+                    addToFavourite={useAddToFavourite}
+                    removeFromFavourites={useDelFromFavourite}
+                />)
+            } else {
+                return (<NotFoundBlock />)
+            }
         } else {
-            return (<NotFoundBlock />)
+            return (<Loader />)
         }
+
     }
 
     return(
-        <div className={commonStyle.body}>
+        <div className={commonStyleBody.body}>
             <ActionBar />
             <div className={commonStyle.content}>
                 <CommonPageHeader title={value === 1 ? "LIKES" : "DISLIKES"}/>
