@@ -3,7 +3,7 @@ import style from "./SimpleButton.module.css"
 
 function SimpleButton({text, onClick, className}) {
     return(
-        <div className={className ? `${className} ${style.btn}` : style.btn} onClick={() => onClick()}>
+        <div className={className ? `${style.btn} ${className}` : style.btn} onClick={() => onClick()}>
             {text}
         </div>
     );
