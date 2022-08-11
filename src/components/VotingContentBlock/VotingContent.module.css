@@ -2,22 +2,15 @@
     background-color: #FFFFFF;
     border-radius: 20px;
     padding: 20px;
-    flex-grow: 1;
-}
-
-.header {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .img {
     width: 100%;
     height: auto;
     position: relative;
-    margin-bottom: 45px;
 }
 
 .img img {
@@ -31,6 +24,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    bottom: -30px;
+    bottom: 50px;
     z-index: 1;
 }

@@ -7,6 +7,7 @@ import ActionBar from "../../components/ActionBar/ActionBar";
 import ActionButton from "../../components/UI/Buttons/ActionButton/ActionButton";
 import icon from "../../images/icons/default/back.svg";
 import SectionTitle from "../../components/UI/SectionTitle/SectionTitle";
+import CommonPageHeader from "../../components/CommonPageHeader/CommonPageHeader";
 
 function FavouritesPage() {
 
@@ -40,10 +41,7 @@ function FavouritesPage() {
         <div className={commonStyle.body}>
             <ActionBar />
             <div className={commonStyle.content}>
-                <div className={commonStyle.header}>
-                    <ActionButton icon={icon} />
-                    <SectionTitle text="FAVOURITES"/>
-                </div>
+                <CommonPageHeader title="FAVOURITES"/>
                 <div>
                     {renderResult()}
                 </div>

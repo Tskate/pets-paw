@@ -9,6 +9,7 @@ import GalleryGrid from "./GalleryGrid/GalleryGrid";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import UploadModalWindow from "./UploadModalWindow/UploadModalWindow";
 import {UploadModalWindowContext} from "../../App";
+import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 
 function GalleryContent({pets, setNewFilters, breeds}) {
 
@@ -21,10 +22,7 @@ function GalleryContent({pets, setNewFilters, breeds}) {
     return(
         <div className={style.content}>
             <div className={style.header}>
-                <div className={style.leftPart}>
-                    <ActionButton icon={icon} />
-                    <SectionTitle text="GALLERY"/>
-                </div>
+                <CommonPageHeader title="GALLERY"/>
                 <UploadButton onclick={showModalWindow}/>
             </div>
             <FilterPanel setNewFilters={setNewFilters} breedsList={breeds}/>

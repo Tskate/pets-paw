@@ -8,6 +8,7 @@ import GalleryGrid from "../../components/GalleryContentBlock/GalleryGrid/Galler
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import NotFoundBlock from "./NotFoundBlock/NotFoundBlock";
 import styles from "../../components/UI/Buttons/ReactionsButton/RegularButtons.module.css";
+import CommonPageHeader from "../../components/CommonPageHeader/CommonPageHeader";
 
 function LikesOrDislikesPage({value}) {
     const [result, setResult] = useState(null);
@@ -38,10 +39,7 @@ function LikesOrDislikesPage({value}) {
         <div className={commonStyle.body}>
             <ActionBar />
             <div className={commonStyle.content}>
-                <div className={commonStyle.header}>
-                    <ActionButton icon={icon} />
-                    <SectionTitle text={value === 1 ? "LIKES" : "DISLIKES"}/>
-                </div>
+                <CommonPageHeader title={value === 1 ? "LIKES" : "DISLIKES"}/>
                 <div>
                     {renderResult()}
                 </div>
