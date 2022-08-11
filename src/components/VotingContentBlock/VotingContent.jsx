@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useNavigate} from 'react-router-dom'
 import style from "./VotingContent.module.css"
 import ActionButton from "../UI/Buttons/ActionButton/ActionButton";
 import icon from "../../images/icons/default/back.svg";
@@ -10,6 +11,7 @@ import favIcon from '../../images/forLog/fav-blank.svg'
 import removeIcon from '../../images/forLog/error-20.svg'
 import LogList from "./LogRecord/LogList";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 
 function VotingContent({pet, toNext}) {
     const [logs, setLogs] = useState([])
@@ -45,6 +47,8 @@ function VotingContent({pet, toNext}) {
             .then(() => toNext())
     }
 
+
+
     function addToLog(sectionName, isAdded=true) {
         const sections = {
             fav : {name: 'Favorites', icon : favIcon},
@@ -69,11 +73,7 @@ function VotingContent({pet, toNext}) {
 
     return(
         <div className={style.content}>
-            <div className={style.header}>
-                <ActionButton icon={icon} />
-                <SectionTitle text="VOTING"/>
-                
-            </div>
+            <CommonPageHeader title="VOTING"/>
             <div className={style.img}>
                 <img src={pet[0].url} alt="pet-photo"/>
                 <div className={style.btnContainer}>
@@ -86,11 +86,9 @@ function VotingContent({pet, toNext}) {
                         action={() => setActionFav(!actionFav)}
                         addToLog={addToLog}
                     />
-
                 </div>
             </div>
             <LogList logs={logs} />
-
         </div>
     );
 }

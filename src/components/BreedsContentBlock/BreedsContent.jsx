@@ -6,16 +6,14 @@ import BreedsFilter from "./BreedsFilterPanel/BreedsFilter";
 import style from './BreedsContent.module.css'
 import GalleryGrid from "../GalleryContentBlock/GalleryGrid/GalleryGrid";
 import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 
 function BreedsContent({breeds, pets, setNewFilters, onClickAsc, onClickDesc}) {
 
     return(
         <div className={style.content}>
             <div className={style.header}>
-                <div className={style.leftPart}>
-                    <ActionButton icon={icon} />
-                    <SectionTitle text="BREEDS"/>
-                </div>
+                <CommonPageHeader title="BREEDS"/>
                 <BreedsFilter
                     breedsList={breeds}
                     setNewFilter={setNewFilters}
