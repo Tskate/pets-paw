@@ -14,7 +14,7 @@ import {sendImage} from "../../../hooks/useRequests";
 
 function UploadModalWindow({uploadImage}) {
     const {isActive, setIsActive} = useContext(UploadModalWindowContext);
-    const [styleOptionButton, setStyleOptionButton] = useState(style.hidden);
+    const [styleButton, setStyleButton] = useState(style.hidden);
 
     const statusMsg = {default: 'No file selected', exist: 'Image File Name: '}
     const logMsg = {success: {msg: 'Thanks for the Upload - Cat found!', icon: successIcon}, error: {msg:'No Cat found - try a different one', icon: errorIcon}}
@@ -31,7 +31,7 @@ function UploadModalWindow({uploadImage}) {
         setLog([])
         setStatus(statusMsg.default)
         setIsSuccess(true)
-        setStyleOptionButton(style.hidden)
+        setStyleButton(style.hidden)
     }
 
     function handleFileUpload(files) {
@@ -43,7 +43,7 @@ function UploadModalWindow({uploadImage}) {
                 setUploadedImage(files[0])
                 setUrl(URL.createObjectURL(files[0]))
                 setStatus(statusMsg.exist + files[0].name)
-                setStyleOptionButton(style.show)
+                setStyleButton(style.show)
             }
         }
     }
@@ -51,7 +51,7 @@ function UploadModalWindow({uploadImage}) {
 
 
     function uploadOnServer() {
-        setStyleOptionButton(style.hidden)
+        setStyleButton(style.hidden)
         uploadImage(uploadedImage).then(response => {
             if(response.ok) {
                 setLog([logMsg.success, ...log])
@@ -82,7 +82,7 @@ function UploadModalWindow({uploadImage}) {
                 <div className={style.status}>
                     <p>{status}</p>
                 </div>
-                <SimpleButton text="UPLOAD PHOTO" className={styleOptionButton} onClick={uploadOnServer}/>
+                <SimpleButton text="UPLOAD PHOTO" className={styleButton} onClick={uploadOnServer}/>
                 <LogBox logs={log}/>
             </div>
         </div>

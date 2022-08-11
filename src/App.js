@@ -9,6 +9,10 @@ import WelcomePagePart from "./components/WelcomePagePart/WelcomePagePart";
 import BreedDescription from "./pages/BreedsPage/BreedDescription/BreedDescription";
 import UploadModalWindow from "./components/GalleryContentBlock/UploadModalWindow/UploadModalWindow";
 import {useUploadImage} from "./hooks/useRequests";
+import SearchPage from "./pages/AddintionalPages/SearchPage/SearchPage";
+import LikesPage from "./pages/AddintionalPages/LikesOrDislikesPage";
+import LikesOrDislikesPage from "./pages/AddintionalPages/LikesOrDislikesPage";
+import FavouritesPage from "./pages/AddintionalPages/FavouritesPage";
 
 export const UploadModalWindowContext = createContext();
 
@@ -37,12 +41,16 @@ function App() {
               <Route path="/gallery" element={
                   <UploadModalWindowContext.Provider value={{isActive : isModalWindowOpen, setIsActive : setIsModalWindowOpen}}>
                     <Gallery breeds={breeds}/>
-                  </UploadModalWindowContext.Provider>} />
+                  </UploadModalWindowContext.Provider>}/>
+              <Route path="/search/:request" element={<SearchPage breeds={breeds}/>}/>
+              <Route path="/likes" element={<LikesOrDislikesPage value={1}/>} />
+              <Route path="/dislikes" element={<LikesOrDislikesPage value={0}/>} />
+              <Route path="/favourites" element={<FavouritesPage />} />
               <Route path="*" element={<Navigate replace to="/" />}/>
           </Routes>
           <UploadModalWindowContext.Provider value={{isActive : isModalWindowOpen, setIsActive : setIsModalWindowOpen}}>
               <UploadModalWindow uploadImage={useUploadImage}/>
-          </UploadModalWindowContext.Provider>} />
+          </UploadModalWindowContext.Provider>
       </div>
   );
 }

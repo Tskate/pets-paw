@@ -13,6 +13,6 @@ body {
 
 .App {
     display: grid;
-    grid-template-columns: 46.2vw 53.8vw;
+    grid-template-columns: 45vw 53vw;
     justify-content: space-between;
 }
