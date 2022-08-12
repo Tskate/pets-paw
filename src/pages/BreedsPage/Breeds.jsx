@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import style from "../CommonBodyStyles.module.css";
 import ActionBar from "../../components/ActionBar/ActionBar";
 import BreedsContent from "../../components/BreedsContentBlock/BreedsContent";
+import {headerForJSON} from "../../api/data";
 
 function Breeds({breeds}) {
 
@@ -13,9 +14,7 @@ function Breeds({breeds}) {
     useEffect(() => {
         fetch(
             `https://api.thecatapi.com/v1/images/search?&breed_ids=${filter.breed}&limit=${filter.limit}&has_breeds=1`, {
-                headers : {
-                    'x-api-key': 'DEMO-API-KEY'
-                }
+                headers : headerForJSON
             })
             .then(res => res.json())
             .then(data => setResult(data))

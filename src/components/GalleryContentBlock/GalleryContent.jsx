@@ -6,7 +6,7 @@ import icon from "../../images/icons/default/back.svg";
 import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import UploadButton from "../UI/Buttons/ActionButton/UploadBtn/UploadButton";
 import GalleryGrid from "./GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
 import UploadModalWindow from "./UploadModalWindow/UploadModalWindow";
 import {UploadModalWindowContext} from "../../App";
 import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";

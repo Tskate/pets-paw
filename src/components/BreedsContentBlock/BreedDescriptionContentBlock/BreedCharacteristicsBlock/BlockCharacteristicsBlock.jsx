@@ -32,8 +32,6 @@ function BlockCharacteristicsBlock({breed}) {
                         </span>
                     </p>
                 </div>
-
-                {console.log(breed)}
             </div>
         </fieldset>
 

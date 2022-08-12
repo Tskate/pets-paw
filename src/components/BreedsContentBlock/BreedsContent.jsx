@@ -5,7 +5,7 @@ import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import BreedsFilter from "./BreedsFilterPanel/BreedsFilter";
 import style from './BreedsContent.module.css'
 import GalleryGrid from "../GalleryContentBlock/GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
 import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 
 function BreedsContent({breeds, pets, setNewFilters, onClickAsc, onClickDesc}) {

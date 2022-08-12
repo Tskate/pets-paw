@@ -1,13 +1,13 @@
+import {headerForFormData, headerForJSON, subID} from "../data";
+
 export function useAddToFavourite(pet) {
    return fetch("https://api.thecatapi.com/v1/favourites",
         {
             method: 'POST',
-            headers: {
-                'Content-Type' : 'application/json',
-                'x-api-key' : '33d0442b-b0dc-4f44-a23d-6eb26431367e'
-            },
+            headers: headerForJSON,
             body: JSON.stringify({
                 "image_id": pet.id,
+                "sub_id": subID
             })
         })
 }
@@ -16,10 +16,7 @@ export function useDelFromFavourite(fav_id) {
     return fetch(`https://api.thecatapi.com/v1/favourites/${fav_id}`,
         {
             method: 'DELETE',
-            headers: {
-                'Content-Type' : 'application/json',
-                'x-api-key' : '33d0442b-b0dc-4f44-a23d-6eb26431367e'
-            }
+            headers: headerForJSON
         })
 }
 
@@ -32,10 +29,7 @@ export function useUploadImage(image) {
     return fetch("https://api.thecatapi.com/v1/images/upload",
         {
             method: 'POST',
-            headers: {
-                'Content-Type' : 'multipart/form-data',
-                'x-api-key' : '33d0442b-b0dc-4f44-a23d-6eb26431367e'
-            },
+            headers: headerForFormData,
             body: formData
         })
 }

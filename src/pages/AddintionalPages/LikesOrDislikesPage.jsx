@@ -3,20 +3,19 @@ import commonStyle from "./CommonStyles.module.css";
 import commonStyleBody from "../CommonBodyStyles.module.css"
 import ActionBar from "../../components/ActionBar/ActionBar";
 import GalleryGrid from "../../components/GalleryContentBlock/GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
 import NotFoundBlock from "./NotFoundBlock/NotFoundBlock";
 import CommonPageHeader from "../../components/CommonPageHeader/CommonPageHeader";
 import Loader from "../../components/UI/Loader/Loader";
+import {headerForJSON, subID} from "../../api/data";
 
 function LikesOrDislikesPage({value}) {
     const [result, setResult] = useState(null);
     const [isFetching, setIsFetching] = useState(false)
 
     useEffect(() => {
-        fetch(`https://api.thecatapi.com/v1/votes`, {
-                headers : {
-                    'x-api-key': 'DEMO-API-KEY'
-                }
+        fetch(`https://api.thecatapi.com/v1/votes?sub_id=${subID}`, {
+                headers : headerForJSON
             })
                 .then(res => res.json())
                 .then(data => {
@@ -27,7 +26,7 @@ function LikesOrDislikesPage({value}) {
     
     function renderResult() {
         if(isFetching) {
-            if(result) {
+            if(result.length) {
                 return( <GalleryGrid
                     pets={result}
                     addToFavourite={useAddToFavourite}

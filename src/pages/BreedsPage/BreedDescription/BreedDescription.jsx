@@ -3,6 +3,7 @@ import ActionBar from "../../../components/ActionBar/ActionBar";
 import DescriptionContent from "../../../components/BreedsContentBlock/BreedDescriptionContentBlock/DescriptionContent";
 import {useParams} from "react-router-dom";
 import style from '../../CommonBodyStyles.module.css'
+import {headerForJSON} from "../../../api/data";
 
 function BreedDescription() {
     const breedID = useParams().breed_id;
@@ -11,9 +12,7 @@ function BreedDescription() {
     useEffect(() => {
         fetch(
             `https://api.thecatapi.com/v1/images/search?&breed_ids=${breedID}&limit=5`, {
-                headers : {
-                    'x-api-key': 'DEMO-API-KEY'
-                }
+                headers : headerForJSON
             })
             .then(res => res.json())
             .then(data => setBreedImages(data))

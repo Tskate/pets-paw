@@ -6,9 +6,10 @@ import dislikeIcon from '../../images/forLog/dislike-color-20.svg'
 import favIcon from '../../images/forLog/fav-blank.svg'
 import removeIcon from '../../images/forLog/error-20.svg'
 import LogList from "./LogRecord/LogList";
-import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
 import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 import Loader from "../UI/Loader/Loader";
+import {headerForJSON, subID} from "../../api/data";
 
 function VotingContent({pet, toNext}) {
     const [logs, setLogs] = useState([])
@@ -17,14 +18,17 @@ function VotingContent({pet, toNext}) {
     const [actionFav, setActionFav] = useState(false);
     const [favourites, setFavourites] = useState()
 
+    const sections = {
+        fav : {name: 'Favorites', icon : favIcon},
+        dislike : {name: 'Dislikes', icon : dislikeIcon},
+        like : {name: 'Likes', icon : likeIcon}
+    }
+
     useEffect(() => {
-        fetch(`https://api.thecatapi.com/v1/favourites`,
+        fetch(`https://api.thecatapi.com/v1/favourites?sub_id=paw-user-123`,
             {
                 method: 'GET',
-                headers: {
-                    'Content-Type' : 'application/json',
-                    'x-api-key' : '33d0442b-b0dc-4f44-a23d-6eb26431367e'
-                }
+                headers: headerForJSON
             })
             .then(res => res.json())
             .then(data => {
@@ -37,12 +41,10 @@ function VotingContent({pet, toNext}) {
         fetch("https://api.thecatapi.com/v1/votes",
             {
                 method: 'POST',
-                headers: {
-                    'Content-Type' : 'application/json',
-                    'x-api-key' : 'DEMO-API-KEY'
-                },
+                headers: headerForJSON,
                 body: JSON.stringify({
                     "image_id": pet[0].id,
+                    "sub_id": subID,
                     "value": val
                 })
             })
@@ -53,12 +55,6 @@ function VotingContent({pet, toNext}) {
 
 
     function addToLog(sectionName, isAdded=true) {
-        const sections = {
-            fav : {name: 'Favorites', icon : favIcon},
-            dislike : {name: 'Dislikes', icon : dislikeIcon},
-            like : {name: 'Likes', icon : likeIcon}
-        }
-
         const newLog = {
             time: `${new Date().getHours()}:${new Date().getMinutes()}` ,
             id: pet[0].id,

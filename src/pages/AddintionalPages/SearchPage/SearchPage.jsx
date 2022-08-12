@@ -3,11 +3,12 @@ import commonBodyStyle from '../../CommonBodyStyles.module.css'
 import commonStyle from '../CommonStyles.module.css'
 import ActionBar from "../../../components/ActionBar/ActionBar";
 import GalleryGrid from "../../../components/GalleryContentBlock/GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../../hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../../api/hooks/useRequests";
 import {useParams} from "react-router-dom";
 import NotFoundBlock from "../NotFoundBlock/NotFoundBlock";
 import CommonPageHeader from "../../../components/CommonPageHeader/CommonPageHeader";
 import Loader from "../../../components/UI/Loader/Loader";
+import {headerForJSON} from "../../../api/data";
 
 function SearchPage({breeds}) {
 
@@ -20,9 +21,7 @@ function SearchPage({breeds}) {
         console.log('breed', breed)
         if(breed.length) {
             fetch(`https://api.thecatapi.com/v1/images/search?&breed_ids=${breed[0].id}&limit=10`, {
-                    headers : {
-                        'x-api-key': 'DEMO-API-KEY'
-                    }
+                    headers : headerForJSON
                 })
                 .then(res => res.json())
                 .then(data => {
