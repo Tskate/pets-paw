@@ -24,7 +24,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 /*.img:hover {*/
@@ -39,9 +39,12 @@
     background-color: rgba(255,245,245,0);
     position: absolute;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.background:hover {
+.background:hover, .img:last-child:hover .background {
     background-color: #FF868E99;
 }
 

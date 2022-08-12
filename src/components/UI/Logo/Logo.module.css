@@ -2,7 +2,8 @@
     color: #1D1D1D;
     font-weight: bold;
 }
-.logo {
+.link {
+    text-decoration: none;
     display: flex;
     flex-direction: row;
     gap: 3px;

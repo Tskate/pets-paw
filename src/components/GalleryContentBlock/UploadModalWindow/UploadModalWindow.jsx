@@ -10,7 +10,7 @@ import {UploadModalWindowContext} from "../../../App";
 import SimpleButton from "../../UI/Buttons/ActionButton/SimpleButton";
 import UploadBox from "./UploadBox/UploadBox";
 import LogBox from "./LogBox/LogBox";
-import {sendImage} from "../../../hooks/useRequests";
+import {sendImage} from "../../../api/hooks/useRequests";
 
 function UploadModalWindow({uploadImage}) {
     const {isActive, setIsActive} = useContext(UploadModalWindowContext);

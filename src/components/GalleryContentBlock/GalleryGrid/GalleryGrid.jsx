@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react";
 import style from './GalleryGrid.module.css'
 import ImageBlock from "./ImageBlock/ImageBlock";
+import {headerForJSON, subID} from "../../../api/data";
 
-function GalleryGrid({pets, addToFavourite, removeFromFavourites, isGallery=true}) {
-
+function GalleryGrid({pets, addToFavourite, removeFromFavourites, isGallery=true, isFavPage=false, setRerender}) {
 
     const [actionFav, setActionFav] = useState(false);
     const [favourites, setFavourites] = useState()
     let petsChunks = []
 
-    function chunking(pets) {
-        const arr = [...pets]
+    function chunking(petsArr) {
+        const arr = [...petsArr]
         const res = [];
         while (arr.length > 0) {
             const chunk = arr.splice(0, 5);
@@ -20,14 +20,18 @@ function GalleryGrid({pets, addToFavourite, removeFromFavourites, isGallery=true
     }
 
     useEffect(() => {
-        fetch(`https://api.thecatapi.com/v1/favourites`,
+        fetch(`https://api.thecatapi.com/v1/favourites?sub_id=${subID}`,
             {
                 method: 'GET',
-                headers: {
-                    'Content-Type' : 'application/json',
-                    'x-api-key' : '33d0442b-b0dc-4f44-a23d-6eb26431367e'
+                headers: headerForJSON
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(isFavPage) {
+                    setRerender()
                 }
-            }).then(res => res.json()).then(data => setFavourites(data))
+                setFavourites(data)
+            })
     }, [actionFav]);
 
 
