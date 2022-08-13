@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--upload-box-color);
     border-radius: 20px;
 }
 

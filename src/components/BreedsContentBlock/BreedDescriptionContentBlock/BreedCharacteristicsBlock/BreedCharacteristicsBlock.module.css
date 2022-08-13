@@ -1,5 +1,5 @@
 .wrapper {
-    border: 2px solid #FBE0DC;
+    border: 2px solid var(--btn-color);
     border-radius: 20px;
     display: flex;
     justify-content: center;

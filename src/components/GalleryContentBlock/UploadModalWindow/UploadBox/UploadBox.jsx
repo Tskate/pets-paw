@@ -1,9 +1,12 @@
 import React, {useRef} from "react";
 import style from "./UploadBox.module.css";
 import uploadIcon from "../../../../images/upload-img.svg";
+import uploadIconNight from "../../../../images/upload-img-night.svg";
+import {useTheme} from "../../../../hooks/useTheme";
 
 function UploadBox({handleFileUpload, url, isSuccess, setIsSuccess}) {
     const inputFile = useRef(null)
+    const {isLight} = useTheme()
 
     function onImageBlockClick() {
         setIsSuccess(true)
@@ -32,7 +35,7 @@ function UploadBox({handleFileUpload, url, isSuccess, setIsSuccess}) {
                 onChange={inputClick}
                 type="file"
             />
-            <img src={uploadIcon} className={url ? style.hidden : ''} alt="upload-image"/>
+            <img src={isLight ? uploadIcon : uploadIconNight} className={url ? style.hidden : ''} alt="upload-image"/>
             <p className={url ? style.hidden : ''}><span>Drag here</span> your file or <span>Click here</span> to upload</p>
             <img src={`${url ? url : ''}`}
                  className={url ? style.uploadedImg : style.hidden}

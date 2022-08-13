@@ -1,13 +1,10 @@
 import React, {useContext} from "react";
 import FilterPanel from "./FilterPanel/FilterPanel";
 import style from './GalleryContent.module.css'
-import ActionButton from "../UI/Buttons/ActionButton/ActionButton";
-import icon from "../../images/icons/default/back.svg";
-import SectionTitle from "../UI/SectionTitle/SectionTitle";
+import commonStyle from '../CommonStyles/CommonPageStyles.module.css'
 import UploadButton from "../UI/Buttons/ActionButton/UploadBtn/UploadButton";
 import GalleryGrid from "./GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
-import UploadModalWindow from "./UploadModalWindow/UploadModalWindow";
+import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import {UploadModalWindowContext} from "../../App";
 import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 
@@ -20,7 +17,7 @@ function GalleryContent({pets, setNewFilters, breeds}) {
     }
 
     return(
-        <div className={style.content}>
+        <div className={commonStyle.content}>
             <div className={style.header}>
                 <CommonPageHeader title="GALLERY"/>
                 <UploadButton onclick={showModalWindow}/>

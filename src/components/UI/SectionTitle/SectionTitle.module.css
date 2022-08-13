@@ -13,6 +13,6 @@
 }
 
 .defaultTitle {
-    background-color: #FBE0DC;
+    background-color: var(--btn-color);
     color: #FF868E;
 }

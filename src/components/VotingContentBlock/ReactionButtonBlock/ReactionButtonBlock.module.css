@@ -4,10 +4,10 @@
     height: 80px;
     width: 248px;
     border-radius: 20px;
-    border: 4px solid #FFFFFF;
+    border: 4px solid var(--adding-background-color);
     overflow: hidden;
     gap: 4px;
-    background-color: #FFFFFF;
+    background-color: var(--main-background-color);
 }
 .container > div {
     cursor: pointer;

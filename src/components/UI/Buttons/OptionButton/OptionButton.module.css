@@ -1,9 +1,7 @@
 .optionButton {
     border-radius: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--adding-background-color);
     color: #FF868E;
-    /*width: 17vh;*/
-    /*height: 4vh;*/
     width: 100px;
     display: flex;
     justify-content: center;
@@ -18,10 +16,6 @@
 .link {
     color: #FF868E;
     text-decoration: none;
-}
-
-.optionButton:hover {
-    background-color: #FBE0DC;
 }
 
 .optionButton:active {

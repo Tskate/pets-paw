@@ -7,16 +7,13 @@ import dislike from '../../../images/icons/default/dislikeW.svg'
 function ReactionButtonBlock({pet, setReaction, addToFavourite, removeFromFavourites, favs, action, addToLog}) {
 
     function actionButtonClick(){
-        console.log("favs 1", favs)
         if(favs.length) {
             const isFav = favs.filter(f => f.image_id === pet.id)
-            console.log("isFav", isFav)
             isFav.length !== 0 ? removeFromFavourites(isFav[0].id).then(addToLog('fav', false)) : addToFavourite(pet).then(addToLog('fav'))
         } else {
             addToFavourite(pet).then(addToLog('fav'))
         }
         action()
-        console.log("favs 2", favs)
     }
 
     return(

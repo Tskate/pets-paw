@@ -1,5 +1,4 @@
 import React from "react";
-import icon from "../../../../images/icons/default/search.svg";
 import style from './ActionButton.module.css'
 
 function ActionButton({icon, onClick}) {

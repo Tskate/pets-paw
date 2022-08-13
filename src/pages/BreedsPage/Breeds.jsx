@@ -35,7 +35,6 @@ function Breeds({breeds}) {
 
         setResult(JSON.parse(sortedRes))
 
-
     }
 
     return(

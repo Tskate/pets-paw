@@ -1,5 +1,5 @@
 .background {
-    background-color: #FBE0DC;
+    background-color: var(--main-page-picture-block-color);
     border-radius: 20px;
     box-sizing: border-box;
     aspect-ratio: 0.82;

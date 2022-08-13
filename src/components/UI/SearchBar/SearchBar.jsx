@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import icon from '../../../images/icons/default/search.svg'
 import style from './SearchBar.module.css'
 import ActionButton from "../Buttons/ActionButton/ActionButton";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function SearchBar() {
 

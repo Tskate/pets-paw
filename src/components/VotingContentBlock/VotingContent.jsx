@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 import style from "./VotingContent.module.css"
+import commonStyle from '../CommonStyles/CommonPageStyles.module.css'
 import ReactionButtonBlock from "./ReactionButtonBlock/ReactionButtonBlock";
 import likeIcon from '../../images/forLog/like-color-20.svg'
 import dislikeIcon from '../../images/forLog/dislike-color-20.svg'
 import favIcon from '../../images/forLog/fav-blank.svg'
 import removeIcon from '../../images/forLog/error-20.svg'
 import LogList from "./LogRecord/LogList";
-import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import CommonPageHeader from "../CommonPageHeader/CommonPageHeader";
 import Loader from "../UI/Loader/Loader";
 import {headerForJSON, subID} from "../../api/data";
@@ -94,7 +95,7 @@ function VotingContent({pet, toNext}) {
     }
 
     return(
-        <div className={style.content}>
+        <div className={commonStyle.content}>
             <CommonPageHeader title="VOTING"/>
             {renderContent()}
             <LogList logs={logs} />

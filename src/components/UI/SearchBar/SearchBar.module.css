@@ -1,6 +1,6 @@
 .inputDiv {
     border-radius: 20px;
-    background-color: #FFFFFF;
+    background-color: var(--adding-background-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,7 +11,7 @@
 }
 
 .inputDiv:hover {
-    border: 2px solid #FBE0DC;
+    border: 2px solid var(--btn-color);
 }
 .inputDiv:active {
     border: 2px solid #FF868E;
