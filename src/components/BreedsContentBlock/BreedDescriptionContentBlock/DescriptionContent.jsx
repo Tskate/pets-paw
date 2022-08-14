@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import style from "../BreedsContent.module.css";
+import commonStyle from '../../CommonStyles/CommonPageStyles.module.css'
 import ActionButton from "../../UI/Buttons/ActionButton/ActionButton";
 import icon from "../../../images/icons/default/back.svg";
 import SectionTitle from "../../UI/SectionTitle/SectionTitle";
@@ -40,7 +41,7 @@ function DescriptionContent({id}) {
     }
 
     return(
-       <div className={style.content}>
+       <div className={commonStyle.content}>
            <div className={style.header}>
                <div className={style.leftPart}>
                    <ActionButton icon={icon} />

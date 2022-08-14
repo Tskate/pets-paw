@@ -1,16 +1,13 @@
-import React, {useState, useContext, useRef} from "react";
+import React, {useState, useContext} from "react";
 import ActionButtonWhite from "../../UI/Buttons/ActionButton/WhiteBtn/ActionButtonWhite";
 import icon from '../../../images/icons/default/close-icon.svg'
-import OptionButton from "../../UI/Buttons/OptionButton/OptionButton";
 import successIcon from "../../../images/forLog/success-20.svg"
 import errorIcon from "../../../images/forLog/error-20.svg"
 import style from './UploadModalWindow.module.css'
-import uploadIcon from "../../../images/upload-img.svg"
 import {UploadModalWindowContext} from "../../../App";
 import SimpleButton from "../../UI/Buttons/ActionButton/SimpleButton";
 import UploadBox from "./UploadBox/UploadBox";
 import LogBox from "./LogBox/LogBox";
-import {sendImage} from "../../../api/hooks/useRequests";
 
 function UploadModalWindow({uploadImage}) {
     const {isActive, setIsActive} = useContext(UploadModalWindowContext);

@@ -12,20 +12,15 @@
     border: none;
     outline: none;
     padding: 8px 10px;
-    /*appearance: none;*/
-    /*font-size: 16px;*/
-    /*line-height: 24px;*/
-    color: #1D1D1D;
+    background-color: var(--adding-background-color);
+    color: var(--main-text-color);
     cursor: pointer;
 }
 .select:hover {
-    border: 2px solid #FBE0DC;
+    border: 2px solid var(--btn-color);
 }
 .select > option {
     color: #8C8C8C;
 }
 
-.select > option:hover {
-    box-shadow: 0 0 10px 100px orange inset;
-}
 

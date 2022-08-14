@@ -1,9 +1,13 @@
 import React from "react";
-import style from "./SortButton.module.css";
+import styles from "./SortButton.module.css";
 
-function SortButton({icon, onClick}) {
+function SortButton({icon, onClick, style}) {
     return(
-        <div className={style.sortButton} onClick={() => onClick()}>
+        <div
+            className={styles.sortButton}
+            onClick={() => onClick()}
+            style={style}
+        >
             <img src={icon} alt="search-icon"/>
         </div>
     );

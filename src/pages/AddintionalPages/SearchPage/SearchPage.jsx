@@ -3,7 +3,7 @@ import commonBodyStyle from '../../CommonBodyStyles.module.css'
 import commonStyle from '../CommonStyles.module.css'
 import ActionBar from "../../../components/ActionBar/ActionBar";
 import GalleryGrid from "../../../components/GalleryContentBlock/GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../../api/hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../../hooks/useRequests";
 import {useParams} from "react-router-dom";
 import NotFoundBlock from "../NotFoundBlock/NotFoundBlock";
 import CommonPageHeader from "../../../components/CommonPageHeader/CommonPageHeader";

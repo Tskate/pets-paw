@@ -27,11 +27,9 @@
     height: 100%;
 }
 
-/*.img:hover {*/
-/*    background-color: #FF868E99;*/
-/*}*/
 .img:hover .fav {
     display: flex !important;
+    background-color: var(--img-block-btn-color) !important;
 }
 .background {
     width: 100%;
@@ -58,4 +56,5 @@
     height: 40px !important;
     align-self: end;
     margin: 0 10px 10px 10px;
+    background-color: var(--img-block-btn-color) !important;
 }

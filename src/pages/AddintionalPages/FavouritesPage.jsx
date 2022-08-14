@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import GalleryGrid from "../../components/GalleryContentBlock/GalleryGrid/GalleryGrid";
-import {useAddToFavourite, useDelFromFavourite} from "../../api/hooks/useRequests";
+import {useAddToFavourite, useDelFromFavourite} from "../../hooks/useRequests";
 import NotFoundBlock from "./NotFoundBlock/NotFoundBlock";
 import commonStyleBody from "../CommonBodyStyles.module.css"
 import commonStyle from "./CommonStyles.module.css";

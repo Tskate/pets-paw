@@ -8,12 +8,12 @@ import Gallery from "./pages/GalleryPage/Gallery";
 import WelcomePagePart from "./components/WelcomePagePart/WelcomePagePart";
 import BreedDescription from "./pages/BreedsPage/BreedDescription/BreedDescription";
 import UploadModalWindow from "./components/GalleryContentBlock/UploadModalWindow/UploadModalWindow";
-import {useUploadImage} from "./api/hooks/useRequests";
+import {useUploadImage} from "./hooks/useRequests";
 import SearchPage from "./pages/AddintionalPages/SearchPage/SearchPage";
-import LikesPage from "./pages/AddintionalPages/LikesOrDislikesPage";
 import LikesOrDislikesPage from "./pages/AddintionalPages/LikesOrDislikesPage";
 import FavouritesPage from "./pages/AddintionalPages/FavouritesPage";
 import {headerForJSON} from "./api/data";
+import {useTheme} from './hooks/useTheme'
 
 export const UploadModalWindowContext = createContext();
 

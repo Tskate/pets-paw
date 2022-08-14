@@ -6,16 +6,12 @@
     align-items: center;
     box-sizing: border-box;
     border-radius: 20px;
-    background-color: #FFFFFF;
+    background-color: var(--adding-background-color);
     cursor: pointer;
-}
-.btn img {
-    /*width: 100%;*/
-    /*height: 100%;*/
 }
 
 .btn:hover {
-    background-color: #FBE0DC;
+    background-color: var(--btn-color);
 }
 .btn:active {
     background-color: #FF868E;

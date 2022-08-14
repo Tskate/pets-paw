@@ -1,4 +1,4 @@
-import {headerForFormData, headerForJSON, subID} from "../data";
+import {headerForFormData, headerForJSON, subID} from "../api/data";
 
 export function useAddToFavourite(pet) {
    return fetch("https://api.thecatapi.com/v1/favourites",
