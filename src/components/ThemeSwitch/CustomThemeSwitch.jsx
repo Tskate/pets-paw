@@ -1,8 +1,8 @@
 import React from "react";
 import style from './CustomThemeSwitch.module.css'
-import dayIcon from '../../../images/icons/theme/day.svg'
-import {useTheme} from "../../../hooks/useTheme"
-import nightIcon from '../../../images/icons/theme/night.svg'
+import dayIcon from '../../images/icons/theme/day.svg'
+import {useTheme} from "../../hooks/useTheme"
+import nightIcon from '../../images/icons/theme/night.svg'
 
 function CustomThemeSwitch() {
     const {theme, setTheme} = useTheme()

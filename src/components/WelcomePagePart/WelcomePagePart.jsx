@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../UI/Logo/Logo";
 import MainOptionsBox from "./MainOptionsBox";
 import styles from './WelcomePagePart.module.css'
-import CustomThemeSwitch from "../UI/Switch/CustomThemeSwitch";
+import CustomThemeSwitch from "../ThemeSwitch/CustomThemeSwitch";
 
 function WelcomePagePart() {
     return (
