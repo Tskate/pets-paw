@@ -6,3 +6,33 @@
     height: fit-content;
     margin-bottom: 10px;
 }
+.pageBtns {
+   display: flex;
+    flex-direction: row;
+    gap: 7px;
+    grid-area: page-btns;
+}
+
+.menuBtn {
+    display: none !important;
+    grid-area: menu-btn;
+}
+.hidden {
+    display: none;
+}
+@media screen and (max-width: 890px) {
+    .menuBtn {
+        display: flex !important;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .bar {
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-template-rows: 2fr;
+        grid-template-areas:
+                "menu-btn page-btns"
+                "bar bar";
+    }
+}

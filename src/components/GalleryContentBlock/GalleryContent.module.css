@@ -15,3 +15,13 @@
     display: flex;
     align-items: flex-end;
 }
+
+@media screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .mediaContent {
+        gap: 10px;
+    }
+}

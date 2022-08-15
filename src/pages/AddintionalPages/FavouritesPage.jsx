@@ -51,14 +51,11 @@ function FavouritesPage() {
     }
 
     return(
-        <div className={commonStyleBody.body}>
-            <ActionBar />
-            <div className={commonStyle.content}>
+        <div className={commonStyle.content}>
                 <CommonPageHeader title="FAVOURITES"/>
                 <div>
                     {renderResult()}
                 </div>
-            </div>
         </div>
     )
 }

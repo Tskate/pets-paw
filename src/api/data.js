@@ -6,7 +6,6 @@ export const headerForJSON = {
 }
 
 export const headerForFormData = {
-    'Content-Type' : 'multipart/form-data',
     'x-api-key' : apiKey
 }
 

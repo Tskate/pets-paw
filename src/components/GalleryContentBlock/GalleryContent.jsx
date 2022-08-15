@@ -17,7 +17,7 @@ function GalleryContent({pets, setNewFilters, breeds}) {
     }
 
     return(
-        <div className={commonStyle.content}>
+        <div className={commonStyle.content + " " + style.mediaContent}>
             <div className={style.header}>
                 <CommonPageHeader title="GALLERY"/>
                 <UploadButton onclick={showModalWindow}/>

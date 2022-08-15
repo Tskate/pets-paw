@@ -8,6 +8,7 @@ import Search from '../../images/images-search.svg'
 import {useLocation} from "react-router-dom";
 
 function MainOptionsBox() {
+
     const currentPath = useLocation()
     const buttonsItems = {
         voting: {
@@ -31,6 +32,7 @@ function MainOptionsBox() {
                 <OptionButton
                     text={buttonsItems.voting.text}
                     path={buttonsItems.voting.path}
+                    className={styles.menuBtn}
                     isChosen={currentPath.pathname === buttonsItems.voting.path ? 1 : 0}
                 />
             </div>
@@ -39,6 +41,7 @@ function MainOptionsBox() {
                 <OptionButton
                     text={buttonsItems.breeds.text}
                     path={buttonsItems.breeds.path}
+                    className={styles.menuBtn}
                     isChosen={currentPath.pathname === buttonsItems.breeds.path ? 1 : 0}
                 />
             </div>
@@ -47,6 +50,7 @@ function MainOptionsBox() {
                 <OptionButton
                     text={buttonsItems.gallery.text}
                     path={buttonsItems.gallery.path}
+                    className={styles.menuBtn}
                     isChosen={currentPath.pathname === buttonsItems.gallery.path ? 1 : 0}
                 />
             </div>

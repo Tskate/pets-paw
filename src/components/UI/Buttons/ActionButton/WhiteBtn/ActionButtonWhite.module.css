@@ -1,5 +1,5 @@
 .searchBtn {
-    background: var(--btn-color);
+    background: var(--adding-background-color);
     height: 40px;
     width: 40px;
     border-radius: 10px;
@@ -9,4 +9,5 @@
 }
 .searchBtn:hover {
     cursor: pointer;
+    background-color: #FF868E;
 }

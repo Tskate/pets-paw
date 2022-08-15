@@ -2,6 +2,7 @@ import React from "react";
 import style from './ImageBlock.module.css'
 import ActionButtonWhite from "../../../UI/Buttons/ActionButton/WhiteBtn/ActionButtonWhite";
 import icon from '../../../../images/icons/default/fav.svg'
+import iconHover from '../../../../images/icons/default/fav-full-30.svg'
 import OptionButton from "../../../UI/Buttons/OptionButton/OptionButton";
 
 function ImageBlock({pet, gridArea, addToFavourite, removeFromFavourites, favs, action, isGallery}) {
@@ -28,6 +29,7 @@ function ImageBlock({pet, gridArea, addToFavourite, removeFromFavourites, favs, 
                     ? <ActionButtonWhite
                         className={style.fav}
                         icon={icon}
+                        iconHover={iconHover}
                         onClick={() => actionButtonClick()}/>
                     : <OptionButton
                         className={style.breed}

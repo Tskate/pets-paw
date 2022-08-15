@@ -8,6 +8,7 @@
     padding: 10px;
     height: 60px;
     flex-grow: 1;
+    grid-area: bar;
 }
 
 .inputDiv:hover {

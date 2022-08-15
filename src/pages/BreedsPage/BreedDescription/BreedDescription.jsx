@@ -20,10 +20,7 @@ function BreedDescription() {
 
 
     return(
-        <div className={style.body}>
-            <ActionBar />
-            <DescriptionContent id={breedID}/>
-        </div>
+        <DescriptionContent id={breedID}/>
     )
 }
 

@@ -1,10 +1,20 @@
-import React from "react";
-import style from './ActionButtonWhite.module.css'
+import React, {useState} from "react";
+import styles from './ActionButtonWhite.module.css'
 
-function ActionButtonWhite({icon, className, onClick}) {
+function ActionButtonWhite({icon, iconHover, className, style, onClick}) {
+    const [iconSrc, setIconSrc] = useState(icon)
+
     return(
-        <div className={`${className} ${style.searchBtn}`} onClick={() => onClick()}>
-            <img src={icon} alt="search-icon"/>
+        <div
+            className={`${styles.searchBtn} ${className}`}
+            onClick={() => onClick()} style={style}
+            onMouseOver={() => setIconSrc(iconHover)}
+            onMouseOut={() => setIconSrc(icon)}
+        >
+            <img
+                src={iconSrc}
+                alt="search-icon"
+            />
         </div>
     );
 }

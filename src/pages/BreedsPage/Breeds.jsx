@@ -38,8 +38,6 @@ function Breeds({breeds}) {
     }
 
     return(
-        <div className={style.body}>
-            <ActionBar />
             <BreedsContent
                 pets={result}
                 setNewFilters={(val) => setFilter(val)}
@@ -47,7 +45,6 @@ function Breeds({breeds}) {
                 onClickAsc={() => sorting(1)}
                 onClickDesc={() => sorting(0)}
             />
-        </div>
     );
 }
 

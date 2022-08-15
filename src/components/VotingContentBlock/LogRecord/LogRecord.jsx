@@ -9,7 +9,7 @@ function LogRecord({info}) {
               <p>Image ID: <span>{info.id}</span> was {info.text}</p>
           </div>
           <div className={style.icon}>
-              <img src={info.icon} alt=""/>
+              <img src={info.icon} alt="action-icon"/>
           </div>
       </div>
     );

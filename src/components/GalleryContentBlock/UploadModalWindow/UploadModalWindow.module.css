@@ -52,3 +52,18 @@
 .hidden {
     display: none !important;
 }
+
+@media screen and (max-width: 768px) {
+    .modalWindow {
+      width: 100%;
+    }
+}
+@media screen and (max-width: 426px) {
+    .container {
+        padding: 0;
+    }
+    .modalWindow {
+        width: 100%;
+        border-radius: 0;
+    }
+}
