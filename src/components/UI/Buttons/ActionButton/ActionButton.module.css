@@ -1,9 +1,14 @@
-.searchBtn {
-    background: #FBE0DC;
+.btn {
+    background: var(--btn-color);
     height: 40px;
     width: 40px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FF868E;
 }

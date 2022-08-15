@@ -11,3 +11,8 @@
     justify-content: center;
     align-items: center;
 }
+
+.defaultTitle {
+    background-color: var(--btn-color);
+    color: #FF868E;
+}

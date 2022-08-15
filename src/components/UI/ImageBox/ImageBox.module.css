@@ -1,6 +1,6 @@
 .imgBox {
-    width: 17vh;
-    height: 22vh;
+    width: 100%;
+    height: 130px;
     border-radius: 20px;
     border: 4px solid #FFFFFF99;
     display: flex;
@@ -13,4 +13,10 @@
     width: auto;
     height: 100%;
     padding-top: 10px;
+}
+
+@media screen and (max-width: 425px) {
+    .imgBox {
+        display: none;
+    }
 }

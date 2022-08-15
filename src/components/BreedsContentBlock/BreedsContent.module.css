@@ -1,0 +1,17 @@
+.header, .leftPart {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+@media screen and (max-width: 678px) {
+    .header {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1175px) and (min-width: 891px) {
+    .header {
+        flex-direction: column;
+    }
+}

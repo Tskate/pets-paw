@@ -1,0 +1,60 @@
+.img {
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 140px;*/
+    background-color: #FF868E;
+    overflow: hidden;
+}
+.fav, .breed {
+    position: absolute;
+    display: none !important;
+    z-index: 2;
+}
+.imgCont {
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+.imgCont > img {
+    /*object-fit: contain;*/
+    /*width: fit-content;*/
+    /*height: 100%;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img:hover .fav {
+    display: flex !important;
+    background-color: var(--img-block-btn-color) !important;
+}
+.background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,245,245,0);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background:hover, .img:last-child:hover .background {
+    background-color: #FF868E99;
+}
+
+.img:hover .breed {
+    display: flex !important;
+
+}
+
+.breed {
+    width: calc(100% - 20px) !important;
+    height: 40px !important;
+    align-self: end;
+    margin: 0 10px 10px 10px;
+    background-color: var(--img-block-btn-color) !important;
+}

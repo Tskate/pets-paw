@@ -4,15 +4,89 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Jost, sans-serif;
-    color: #1D1D1D;
+    color: var(--main-text-color);
+    transition: color 500ms linear;
 }
 
 body {
-    background: #E5E5E5;
+    background: var(--main-background-color);
+    transition: background-color 300ms linear;
 }
 
 .App {
-    display: grid;
-    grid-template-columns: 46.2vw 53.8vw;
+    display: flex;
+    position: relative;
+    gap: 2vw;
     justify-content: space-between;
 }
+
+.content {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 1.2em);
+    margin-bottom: 1.2em;
+    overflow-y: auto;
+    /*flex-grow: 1;*/
+    width: 53vw;
+}
+
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.mainPage {
+    padding: 0;
+}
+@media screen and (max-width: 890px) {
+    .content {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 426px) {
+    .content {
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+}
+html[data-theme='night'] {
+    --main-background-color: #1D1D1D;
+    --adding-background-color: #FFFFFF0D;
+    --main-text-color: #FFFFFF;
+    --main-page-picture-block-color: #FFFFFF0D;
+    --slider-background-color: #FF868E33;
+    --btn-color: #FF868E33;
+    --modal-window-color: #282828;
+    --upload-box-color: #FFFFFF0D;
+    --breed-page-select-bg-color: #FFFFFF0D;
+    --dot-slider-bg-color: #282828;
+    --log-body-bg-color: #FFFFFF0D;
+    --img-block-btn-color: #282828;
+}
+
+html[data-theme='light'] {
+    --main-background-color: #F8F8F7;
+    --adding-background-color: #FFFFFF;
+    --main-text-color: #1D1D1D;
+    --main-page-picture-block-color: #FBE0DC;
+    --slider-background-color: #FBE0DC;
+    --btn-color: #FBE0DC;
+    --modal-window-color: #F8F8F7;
+    --upload-box-color: #FFFFFF;
+    --breed-page-select-bg-color: #F8F8F7;
+    --dot-slider-bg-color: #FFFFFF;
+    --log-body-bg-color: #F8F8F7;
+    --img-block-btn-color: #FFFFFF;
+}
+

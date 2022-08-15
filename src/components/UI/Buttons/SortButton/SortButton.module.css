@@ -1,0 +1,14 @@
+.sortButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--breed-page-select-bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sortButton:hover {
+    border: 2px solid var(--btn-color);
+}
