@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from "react";
-import style from "../CommonBodyStyles.module.css";
-import ActionBar from "../../components/ActionBar/ActionBar";
 import BreedsContent from "../../components/BreedsContentBlock/BreedsContent";
 import {headerForJSON} from "../../api/data";
 
