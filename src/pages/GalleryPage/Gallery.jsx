@@ -20,14 +20,11 @@ function Gallery({breeds}) {
 
 
     return(
-        <div className={style.body}>
-            <ActionBar />
             <GalleryContent
                 pets={result}
                 setNewFilters={(val) => setFilter(val)}
                 breeds={breeds}
             />
-        </div>
     );
 }
 

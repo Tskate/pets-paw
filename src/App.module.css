@@ -5,18 +5,61 @@
     box-sizing: border-box;
     font-family: Jost, sans-serif;
     color: var(--main-text-color);
+    transition: color 500ms linear;
 }
 
 body {
     background: var(--main-background-color);
+    transition: background-color 300ms linear;
 }
 
 .App {
     display: flex;
     position: relative;
+    gap: 2vw;
     justify-content: space-between;
 }
 
+.content {
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 1.2em);
+    margin-bottom: 1.2em;
+    overflow-y: auto;
+    /*flex-grow: 1;*/
+    width: 53vw;
+}
+
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.mainPage {
+    padding: 0;
+}
+@media screen and (max-width: 890px) {
+    .content {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 426px) {
+    .content {
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+}
 html[data-theme='night'] {
     --main-background-color: #1D1D1D;
     --adding-background-color: #FFFFFF0D;

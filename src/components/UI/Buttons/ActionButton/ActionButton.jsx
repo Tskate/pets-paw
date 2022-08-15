@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import style from './ActionButton.module.css'
 
-function ActionButton({icon, onClick}) {
+function ActionButton({icon, iconHover, onClick}) {
+    const [iconSrc, setIconSrc] = useState(icon)
+
     return(
-        <div className={style.searchBtn} onClick={() => onClick()}>
-            <img src={icon} alt="search-icon"/>
+        <div
+            className={style.btn}
+            onClick={() => onClick()}
+            onMouseOver={() => setIconSrc(iconHover)}
+            onMouseOut={() => setIconSrc(icon)}
+        >
+            <img src={iconSrc} alt="search-icon"/>
         </div>
     );
 }

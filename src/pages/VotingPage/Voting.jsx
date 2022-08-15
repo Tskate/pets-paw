@@ -23,10 +23,7 @@ function Voting() {
     function isLoadPet() {
         if(pet) {
             return(
-                <div className={style.body}>
-                    <ActionBar />
                     <VotingContent pet={pet} toNext={showNext}/>
-                </div>
             )
         }
     }

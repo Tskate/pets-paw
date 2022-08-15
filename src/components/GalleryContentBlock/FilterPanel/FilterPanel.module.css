@@ -19,5 +19,17 @@
     flex-grow: 1;
 }
 
-.selectorWithBtn:last-child {
+@media screen and (max-width: 525px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 5px 10px 10px;
+    }
+    .selectorWithBtn {
+        flex-direction: column;
+    }
+    .update, .wrapper {
+        width: 100%;
+    }
 }

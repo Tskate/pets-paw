@@ -38,28 +38,31 @@ function BreedsFilter({breedsList, setNewFilter, onClickAsc, onClickDesc}) {
     return(
         <div className={style.wrapper}>
             <Selector
-                styleForSelect={styleForSelect}
+                styleForSelect={{gridArea: 'breeds', ...styleForSelect}}
                 title=''
                 options={breeds}
                 setSelect={(val) => setBreed(val)}
-                styleForDiv = {{flexGrow: 1}}
+                styleForDiv = {{flexGrow: 2}}
             />
-            <Selector
-                styleForSelect={styleForSelect}
-                title=''
-                options={limits}
-                setSelect={(val) => setLimit(val)}
-            />
-            <SortButton
-                icon={order.asc ? sortIconActive : sortIcon}
-                onClick={sortAsc}
-                style={order.asc ? styleForSortButton : {}}
-            />
-            <SortButton
-                icon={order.desc? sortRevertIconActive : sortRevertIcon}
-                onClick={sortDesc}
-                style={order.desc ? styleForSortButton : {}}
-            />
+            <div className={style.filters}>
+                <Selector
+                    styleForSelect={styleForSelect}
+                    title=''
+                    options={limits}
+                    setSelect={(val) => setLimit(val)}
+                    styleForDiv = {{flexGrow: 1, minWidth: '82px'}}
+                />
+                <SortButton
+                    icon={order.asc ? sortIconActive : sortIcon}
+                    onClick={sortAsc}
+                    style={order.asc ? styleForSortButton : {}}
+                />
+                <SortButton
+                    icon={order.desc? sortRevertIconActive : sortRevertIcon}
+                    onClick={sortDesc}
+                    style={order.desc ? styleForSortButton : {}}
+                />
+            </div>
         </div>
     );
 

@@ -19,10 +19,11 @@
     color: var(--main-text-color);
     font-size: 16px;
     line-height: 24px;
-
+    grid-area: time;
 }
 .text {
     flex-grow: 1;
+    grid-area: text;
 }
 .text > p {
     color: #8C8C8C;
@@ -34,4 +35,21 @@
 .icon {
     display: flex;
     align-items: center;
+    justify-content: right;
+    grid-area: icon;
+}
+
+@media screen and (max-width: 425px) {
+    .log {
+        display: grid;
+        width: 100%;
+        gap: 10px;
+        grid-template-areas:
+            "time icon"
+            "text text";
+        height: 115px;
+    }
+    .time {
+        width: 58px;
+    }
 }

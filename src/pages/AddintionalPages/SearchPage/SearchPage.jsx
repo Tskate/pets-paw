@@ -52,9 +52,7 @@ function SearchPage({breeds}) {
     }
 
     return(
-        <div className={commonBodyStyle.body}>
-            <ActionBar />
-            <div className={commonStyle.content}>
+        <div className={commonStyle.content}>
                 <CommonPageHeader title="SEARCH"/>
                 <div>
                     <p style={{color: '#8C8C8C'}}>Search results for: <span>{request}</span></p>
@@ -62,7 +60,6 @@ function SearchPage({breeds}) {
                 <div>
                     {renderResult()}
                 </div>
-            </div>
         </div>
     );
 }

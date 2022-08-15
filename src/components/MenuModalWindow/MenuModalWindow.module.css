@@ -1,0 +1,22 @@
+.modalWindow {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: var(--main-background-color);
+}
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}

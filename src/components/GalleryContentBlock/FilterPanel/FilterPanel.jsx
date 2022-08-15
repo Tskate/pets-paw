@@ -3,6 +3,7 @@ import style from './FilterPanel.module.css'
 import Selector from "../../UI/Selector/Selector";
 import ActionButtonWhite from "../../UI/Buttons/ActionButton/WhiteBtn/ActionButtonWhite";
 import icon from "../../../images/icons/default/round-arrow.svg";
+import iconHover from '../../../images/icons/white/update-white-20.svg'
 
 function FilterPanel({setNewFilters, breedsList}) {
     const orders = [{value:'RANDOM', opt:'Random'}, {value:'DESC', opt:'Desc'}, {value:'ASC', opt:'Asc'}]
@@ -43,7 +44,11 @@ function FilterPanel({setNewFilters, breedsList}) {
                     options={limits}
                     setSelect={(val) => setLimit(val)}
                 />
-                <ActionButtonWhite icon={icon} onClick={createFilterObject}/>
+                <ActionButtonWhite
+                    icon={icon}
+                    iconHover={iconHover}
+                    onClick={createFilterObject}
+                    className={style.update}/>
             </div>
         </div>
     );

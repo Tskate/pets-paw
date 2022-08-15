@@ -3,10 +3,12 @@ import Logo from "../UI/Logo/Logo";
 import MainOptionsBox from "./MainOptionsBox";
 import styles from './WelcomePagePart.module.css'
 import CustomThemeSwitch from "../ThemeSwitch/CustomThemeSwitch";
+import {useLocation} from "react-router-dom";
 
 function WelcomePagePart() {
+    const currentPage = useLocation().pathname
     return (
-        <div className={styles.main}>
+        <div className={styles.main} style={currentPage === '/' ? {display: "block"} : {}}>
             <div className={styles.header}>
                 <Logo />
                 <CustomThemeSwitch />

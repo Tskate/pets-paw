@@ -42,13 +42,10 @@ function LikesOrDislikesPage({value}) {
     }
 
     return(
-        <div className={commonStyleBody.body}>
-            <ActionBar />
-            <div className={commonStyle.content}>
-                <CommonPageHeader title={value === 1 ? "LIKES" : "DISLIKES"}/>
-                <div>
-                    {renderResult()}
-                </div>
+        <div className={commonStyle.content}>
+            <CommonPageHeader title={value === 1 ? "LIKES" : "DISLIKES"}/>
+            <div>
+                {renderResult()}
             </div>
         </div>
     )
