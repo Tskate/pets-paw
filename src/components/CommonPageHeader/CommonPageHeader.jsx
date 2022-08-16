@@ -6,7 +6,7 @@ import iconHover from '../../images/icons/white/back-white-20.svg'
 import SectionTitle from "../UI/SectionTitle/SectionTitle";
 import {useNavigate} from "react-router-dom";
 
-function CommonPageHeader({title}) {
+function CommonPageHeader({title, isDefaultTitle=false}) {
 
     const navigate = useNavigate()
 
@@ -17,7 +17,7 @@ function CommonPageHeader({title}) {
     return(
         <div className={style.header}>
             <ActionButton icon={icon} iconHover={iconHover} onClick={goBack}/>
-            <SectionTitle text={title}/>
+            <SectionTitle text={title} isDefault={isDefaultTitle}/>
         </div>
     );
 }
