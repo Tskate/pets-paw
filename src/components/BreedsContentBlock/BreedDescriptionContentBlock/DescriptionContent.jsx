@@ -7,6 +7,7 @@ import SectionTitle from "../../UI/SectionTitle/SectionTitle";
 import BlockCharacteristicsBlock from "./BreedCharacteristicsBlock/BlockCharacteristicsBlock";
 import Slides from "./Slides/Slides";
 import {headerForJSON} from "../../../api/data";
+import CommonPageHeader from "../../CommonPageHeader/CommonPageHeader";
 
 function DescriptionContent({id}) {
     const [breed, setBreed] = useState()
@@ -44,8 +45,7 @@ function DescriptionContent({id}) {
        <div className={commonStyle.content}>
            <div className={style.header}>
                <div className={style.leftPart}>
-                   <ActionButton icon={icon} />
-                   <SectionTitle text="BREEDS" isDefault={true}/>
+                   <CommonPageHeader title="BREEDS" isDefaultTitle={true}/>
                    <SectionTitle text={id} />
                </div>
            </div>

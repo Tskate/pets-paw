@@ -69,7 +69,7 @@ function UploadModalWindow({uploadImage}) {
                 </div>
                 <div className={style.info}>
                     <h2>Upload a .jpg or .png Cat Image</h2>
-                    <p>Any uploads must comply with the <a href="https://thecatapi.com/privacy">upload guidelines</a> or face deletion.</p>
+                    <p>Any uploads must comply with the <a href="https://thecatapi.com/privacy" target="_blank">upload guidelines</a> or face deletion.</p>
                 </div>
                 <UploadBox
                     handleFileUpload={handleFileUpload}
