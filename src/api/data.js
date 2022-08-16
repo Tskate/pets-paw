@@ -9,4 +9,11 @@ export const headerForFormData = {
     'x-api-key' : apiKey
 }
 
-export const subID = `paw-user-${Math.floor(Math.random() * (1000 - 1 + 1) + 1)}`
+function subId() {
+    const subID = `paw-user-${Math.floor(Math.random() * (1000 - 1 + 1) + 1)}`
+    localStorage.setItem('sub-id', subID)
+
+    return subID
+}
+
+export const subID = localStorage.getItem('sub-id') || subId()
