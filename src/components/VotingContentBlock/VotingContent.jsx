@@ -57,7 +57,7 @@ function VotingContent({pet, toNext}) {
 
     function addToLog(sectionName, isAdded=true) {
         const newLog = {
-            time: `${new Date().getHours()}:${new Date().getMinutes()}` ,
+            time: `${new Date().getHours()}:${new Date().getMinutes() < 10 ? '0' : ''}${new Date().getMinutes()}` ,
             id: pet[0].id,
         }
 
