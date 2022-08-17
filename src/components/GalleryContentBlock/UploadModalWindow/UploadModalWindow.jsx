@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react";
 import ActionButtonWhite from "../../UI/Buttons/ActionButton/WhiteBtn/ActionButtonWhite";
 import icon from '../../../images/icons/default/close-icon.svg'
+import iconHover from '../../../images/icons/white/close-white-20.svg'
 import successIcon from "../../../images/forLog/success-20.svg"
 import errorIcon from "../../../images/forLog/error-20.svg"
 import style from './UploadModalWindow.module.css'
@@ -64,11 +65,11 @@ function UploadModalWindow({uploadImage}) {
         <div className={isActive ? style.container : style.hidden}>
             <div className={style.modalWindow}>
                 <div className={style.button}>
-                    <ActionButtonWhite icon={icon} onClick={closeModalWindow}/>
+                    <ActionButtonWhite icon={icon} iconHover={iconHover} onClick={closeModalWindow}/>
                 </div>
                 <div className={style.info}>
                     <h2>Upload a .jpg or .png Cat Image</h2>
-                    <p>Any uploads must comply with the <a href="https://thecatapi.com/privacy">upload guidelines</a> or face deletion.</p>
+                    <p>Any uploads must comply with the <a href="https://thecatapi.com/privacy" target="_blank">upload guidelines</a> or face deletion.</p>
                 </div>
                 <UploadBox
                     handleFileUpload={handleFileUpload}

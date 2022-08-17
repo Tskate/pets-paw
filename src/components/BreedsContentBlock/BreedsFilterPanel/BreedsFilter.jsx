@@ -11,11 +11,12 @@ import sortRevertIconActive from "../../../images/icons/sortIcon/sort-revert-col
 function BreedsFilter({breedsList, setNewFilter, onClickAsc, onClickDesc}) {
     const breeds = [{value: '', opt:'All breeds'}, ...(breedsList).map(br => { return {value: br.id, opt:br.name}})]
     const limits = [{value:5, opt: 'Limit: 5'}, {value:10, opt: 'Limit: 10'}, {value:15, opt: 'Limit: 15'}, {value:20, opt: 'Limit: 20'}]
+    const defaultSort = {asc: 0, desc: 0}
 
     const [breed, setBreed] = useState(breeds[0].value)
     const [limit, setLimit] = useState(limits[0].value)
 
-    const [order, setOrder] = useState({asc: 0, desc: 0})
+    const [order, setOrder] = useState(defaultSort)
 
 
     const styleForSelect = {backgroundColor: 'var(--breed-page-select-bg-color)', color: '#8C8C8C'}
@@ -26,13 +27,21 @@ function BreedsFilter({breedsList, setNewFilter, onClickAsc, onClickDesc}) {
     }, [breed, limit]);
 
     function sortAsc() {
-        setOrder({asc: 1, desc: 0})
-        onClickAsc()
+        if(order.asc === 0) {
+            setOrder({asc: 1, desc: 0})
+            onClickAsc()
+        } else {
+            setOrder(defaultSort)
+        }
     }
 
     function sortDesc() {
-        setOrder({asc: 0, desc: 1})
-        onClickDesc()
+        if (order.desc === 0) {
+            setOrder({asc: 0, desc: 1})
+            onClickDesc()
+        } else {
+            setOrder(defaultSort)
+        }
     }
 
     return(
